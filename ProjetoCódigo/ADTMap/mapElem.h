@@ -17,12 +17,13 @@
 #pragma once
 
 #include <stdbool.h>
+#include "airport.h"
 
 /** Key type definition. Change according to the use-case. */
-typedef int MapKey;
+typedef char* MapKey;
 
 /** Value type definition. Change according to the use-case. */
-typedef int MapValue;
+typedef Airport MapValue;
 
 /**
  * @brief Prints a key.

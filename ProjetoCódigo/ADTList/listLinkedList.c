@@ -1,14 +1,3 @@
-/**
- * @file listLinkedList.c
- * 
- * @brief Provides an implementation of the ADT List with a 
- * doubly-linked list with sentinels as the underlying 
- * data structure.
- * 
- * @author Bruno Silva (brunomnsilva@gmail.com)
- * @bug No known bugs.
- */
-
 #include "list.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -22,9 +11,8 @@ typedef struct node {
 } Node;
 
 typedef struct listImpl {
-	PtNode header;
-	PtNode trailer;
-	unsigned int size; 
+	PtNode header, trailer;
+	int size;
 } ListImpl;
 
 
@@ -39,45 +27,43 @@ static PtNode nodeAtRank(PtList list, int rank) {
 		currentRank++;
 		currentNode = currentNode->next;
 	}
-
-	/* may be optimized if rank > size/2 by starting at trailer */
-
 	return NULL;
 }
 
 
 PtList listCreate() {
 		
-	PtList newList = (PtList)malloc(sizeof(ListImpl));
-	if (newList == NULL) return NULL;
-
-	newList->header = (PtNode)malloc(sizeof(Node));
-	newList->trailer = (PtNode)malloc(sizeof(Node));
-
-	newList->header->prev = NULL;
-	newList->header->next = newList->trailer;
-
-	newList->trailer->prev = newList->header;
-	newList->trailer->next = NULL;
-
-	newList->size = 0;
-
-	return newList;
+	ListImpl* linkedList = (ListImpl*) malloc(sizeof(ListImpl));
+	if(linkedList == NULL)
+		return NULL;
+	linkedList->size = 0;
+	linkedList->header = (PtNode) malloc(sizeof(Node));
+	if(linkedList->header == NULL){
+		free(linkedList);
+		return NULL;
+	}
+	linkedList->trailer = (PtNode) malloc(sizeof(Node));
+	if(linkedList->trailer == NULL){
+		free(linkedList->header);
+		free(linkedList);
+		return NULL;
+	}
+	linkedList->header->next = linkedList->trailer;
+	linkedList->trailer->prev = linkedList->header;
+	return linkedList;
 }
 
 int listDestroy(PtList *ptList) {
-	PtList list = *ptList;
-	if (list == NULL) return LIST_NULL;
-
-	PtNode current = list->header;
-	while (current != NULL) {
-		PtNode remove = current;
-		current = current->next;
-		free(remove);
+	PtList listToDestroy = *ptList;
+	if(listToDestroy == NULL)
+		return LIST_NULL;
+	PtNode nextNode = listToDestroy->header;
+	while(nextNode == NULL){
+		PtNode aux = nextNode->next;
+		free(nextNode);
+		nextNode = aux;
 	}
-
-	free(list);
-
+	free(listToDestroy);
 	*ptList = NULL;
 
 	return LIST_OK;
@@ -85,69 +71,56 @@ int listDestroy(PtList *ptList) {
 
 int listAdd(PtList list, int rank, ListElem elem) {
 	if (list == NULL) return LIST_NULL;
-	if (rank < 0 || rank > list->size) return LIST_INVALID_RANK;
-
-
-	PtNode nodeCurRank = nodeAtRank(list, rank);
-	PtNode nodePrevRank = nodeCurRank->prev;
-
-	PtNode newNode = (PtNode)malloc(sizeof(Node));
-	if( newNode == NULL) return LIST_NO_MEMORY;
-	
-	newNode->element = elem;
-	newNode->next = nodeCurRank;
-	newNode->prev = nodePrevRank;
-
-	nodePrevRank->next = newNode;
-	nodeCurRank->prev = newNode;
-
+	if(rank < 0 || rank > list->size) return LIST_INVALID_RANK;
+	PtNode nodeToAdd = (PtNode)malloc(sizeof(Node));
+	nodeToAdd->element = elem;
+	PtNode nodeRank = nodeAtRank(list, rank);
+	PtNode prevNode = nodeRank->prev;
+	nodeToAdd->next = nodeRank;
+	nodeToAdd->prev = prevNode;
+	nodeRank->prev = nodeToAdd;
+	prevNode->next = nodeToAdd;
 	list->size++;
-
 	return LIST_OK;
 }
 
 int listRemove(PtList list, int rank, ListElem *ptElem) {
 	if (list == NULL) return LIST_NULL;
-	if (list->size == 0) return LIST_EMPTY;
-	if (rank < 0 || rank > list->size - 1) return LIST_INVALID_RANK;
-
-	PtNode nodeCurRank = nodeAtRank(list, rank);
-	*ptElem = nodeCurRank->element;
-
-	PtNode nodeNextRank = nodeCurRank->next;
-	PtNode nodePrevRank = nodeCurRank->prev;
-	nodePrevRank->next = nodeNextRank;
-	nodeNextRank->prev = nodePrevRank;
-
-	free(nodeCurRank);
-
+	if(rank < 0 || rank > list->size) return LIST_INVALID_RANK;
+	PtNode nodeToRemove = nodeAtRank(list, rank);
+	*ptElem = nodeToRemove->element;
+	nodeToRemove->prev->next = nodeToRemove->next;
+	nodeToRemove->prev->next->prev = nodeToRemove->prev;
 	list->size--;
+	free(nodeToRemove);
 
 	return LIST_OK;
 }
 
 int listGet(PtList list, int rank, ListElem *ptElem) {
 	if (list == NULL) return LIST_NULL;
-	if (rank < 0 || rank > list->size - 1) return LIST_INVALID_RANK;
-
-	PtNode node = nodeAtRank(list, rank);
-	if (node != NULL) {
-		*ptElem = node->element;
+	if(rank < 0 || rank > list->size) return LIST_INVALID_RANK;
+	PtNode currentNode = nodeAtRank(list, rank);
+	/*
+	for(int i = 0; i < list->size; i++){
+		currentNode = currentNode->next;
 	}
-
+	*/
+	*ptElem = currentNode->element;
 	return LIST_OK;
 }
 
 int listSet(PtList list, int rank, ListElem elem, ListElem *ptOldElem) {
 	if (list == NULL) return LIST_NULL;
-	if (rank < 0 || rank > list->size - 1) return LIST_INVALID_RANK;
-
-	PtNode node = nodeAtRank(list, rank);
-	if (node != NULL) {
-		*ptOldElem = node->element;
-		node->element = elem;
+	if(rank < 0 || rank > list->size) return LIST_INVALID_RANK;
+	PtNode currentNode = nodeAtRank(list, rank);
+	/*
+	for(int i = 0; i < list->size; i++){
+		currentNode = currentNode->next;
 	}
-
+	*/
+	*ptOldElem = currentNode->element;
+	currentNode->element = elem;
 	return LIST_OK;
 }
 
@@ -167,16 +140,15 @@ bool listIsEmpty(PtList list) {
 
 int listClear(PtList list) {
 	if (list == NULL) return LIST_NULL;
-
-	PtNode current = list->header->next;
-	while (current != list->trailer) {
-		current = current->next;
-		free(current->prev);
+	
+	PtNode currentNode = list->header->next;
+	while(currentNode != list->trailer){
+		PtNode aux = currentNode->next;
+		free(currentNode);
+		currentNode = aux;
 	}
-
 	list->header->next = list->trailer;
 	list->trailer->prev = list->header;
-
 	list->size = 0;
 
 	return LIST_OK;
@@ -186,21 +158,17 @@ void listPrint(PtList list) {
 	if (list == NULL) {
 		printf("(LIST NULL)\n");
 	}
-	else if (list->size == 0) {
+	else if (listIsEmpty(list)) {
 		printf("(LIST EMPTY)\n");
 	}
 	else {
-		int rank = 0;
-		PtNode current = list->header->next;
-		while (current != list->trailer) {
-
-			printf("Rank %d: ", rank);
-			listElemPrint(current->element);
+		printf("List contents (by rank): \n");
+		PtNode nextNode = list->header;
+		while(nextNode->next != list->trailer){
+			listElemPrint(nextNode->next->element);
 			printf("\n");
-			
-			rank++;
-			current = current->next;
-		}
+			nextNode = nextNode->next;
+		}	
 	}
 	printf("\n");
 }

@@ -60,7 +60,7 @@ int mapDestroy(PtMap *ptMap);
  * @return MAP_NO_MEMORY if unsufficient memory for allocation, or
  * @return MAP_NULL if 'map' is NULL 
  */
-int mapPut(PtMap map, MapKey key, MapValue value);
+int mapPut(PtMap map, MapKey key);
 
 /**
  * @brief Removes a mapping from a map.
