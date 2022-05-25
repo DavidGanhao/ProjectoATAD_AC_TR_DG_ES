@@ -1,7 +1,14 @@
+/**
+ * @file listElem.c
+ * @brief Implements operations for ListElem.
+ * 
+ * @author Bruno Silva (brunomnsilva@gmail.com)
+ * @bug No known bugs.
+ */
+
 #include "listElem.h"
 #include <stdio.h>
 
 void listElemPrint(ListElem elem) {
-	printf("FLIGHT NUMBER %d\nAirline: %s\nOrigin airport: %s\nDestination airport: \n"
-    , elem.flightNumber, elem.airline, elem.originAirport, elem.destinationAirport);
+	printf("%d", elem);
 }

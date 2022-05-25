@@ -1,3 +1,14 @@
+/**
+ * @file listLinkedList.c
+ * 
+ * @brief Provides an implementation of the ADT List with a 
+ * doubly-linked list with sentinels as the underlying 
+ * data structure.
+ * 
+ * @author Bruno Silva (brunomnsilva@gmail.com)
+ * @bug No known bugs.
+ */
+
 #include "list.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -27,6 +38,9 @@ static PtNode nodeAtRank(PtList list, int rank) {
 		currentRank++;
 		currentNode = currentNode->next;
 	}
+
+	/* may be optimized if rank > size/2 by starting at trailer */
+
 	return NULL;
 }
 
