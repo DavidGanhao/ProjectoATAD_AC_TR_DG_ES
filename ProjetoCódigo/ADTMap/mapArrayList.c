@@ -90,9 +90,9 @@ int mapDestroy(PtMap *ptMap) {
 	return MAP_OK;
 }
 
-int mapPut(PtMap map, MapKey key, MapValue value) {
+int mapPut(PtMap map, MapKey key) {
 	if (map == NULL) return MAP_NULL;
-
+	/*
 	int index = findIndexOfKey(map, key);
 	if (index != -1) {
 		map->elements[index].value = value;
@@ -107,6 +107,22 @@ int mapPut(PtMap map, MapKey key, MapValue value) {
 
 		return MAP_OK;
 	}
+	*/
+
+	int index = findIndexOfKey(map, key);
+	if(index == -1){
+		if(!ensureCapacity(map)) return MAP_NO_MEMORY;
+
+		map->elements[map->size].key = key;
+		map->elements[map->size].value = 1;
+		map->size++;
+
+		return MAP_OK;
+	}else{
+		map->elements[index].value++;
+		return MAP_OK;
+	}
+
 }
 
 int mapRemove(PtMap map, MapKey key, MapValue *ptValue) {
@@ -192,8 +208,9 @@ void mapPrint(PtMap map) {
 	else {
 		for (int i = 0; i < map->size; i++) {
 			mapKeyPrint(map->elements[i].key);
-			printf(" : \n");
+			printf(" : ");
 			mapValuePrint(map->elements[i].value);
+			printf("\n");
 		}
 	}
 }
