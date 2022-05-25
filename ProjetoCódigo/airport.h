@@ -7,6 +7,7 @@ typedef struct airport{
     char state[3];
     float latitude;
     float longitude;
+    int timezome;
 }Airport;
 
 typedef Airport* PtAirport;
