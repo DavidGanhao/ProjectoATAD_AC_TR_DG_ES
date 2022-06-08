@@ -1,6 +1,8 @@
 #pragma once
 
+typedef struct airline {
+    char iatacode[3];
+    char name[100];
+} Airline;
 
-struct airLine;
-
-typedef struct airLine* PtAirline;
+typedef Airline *PtAirline;
