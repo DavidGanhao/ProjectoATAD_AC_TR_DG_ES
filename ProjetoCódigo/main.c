@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <locale.h>
 #include <time.h>
+#include "airline.h"
 #include "utils.h"
 #include "list.h"
 #include "map.h"
@@ -12,10 +13,14 @@ void waitFunction();
 
 int main()
 {
+	PtAirline airlines[14];
 
+	loadar(airlines, 14);
+
+	/*
 	srand(time(NULL));
 
-	/* commands interpreter */
+	// commands interpreter
 	String command;
 	int quit = 0;
 
@@ -26,13 +31,13 @@ int main()
 
 		printCommandsMenu();
 		fgets(command, sizeof(command), stdin);
-		/* descartar 'newline'. Utilizar esta técnica sempre que for lida uma
-		 * string para ser utilizada, e.g., nome de ficheiro, chave, etc.. */
+		// descartar 'newline'. Utilizar esta técnica sempre que for lida uma
+		// string para ser utilizada, e.g., nome de ficheiro, chave, etc.. //
 		command[strlen(command) - 1] = '\0';
 
 		if (equalsStringIgnoreCase(command, "QUIT"))
 		{
-			quit = 1; /* vai provocar a saída do interpretador */
+			quit = 1; // vai provocar a saída do interpretador //
 		}
 		else
 		{
@@ -42,6 +47,7 @@ int main()
 	}
 
 	printf("Good Bye! ...\n");
+	*/
 }
 
 void printCommandsMenu()
