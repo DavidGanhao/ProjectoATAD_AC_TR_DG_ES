@@ -13,8 +13,8 @@ typedef struct airport {
 
 typedef Airport *PtAirport;
 
-int loadar(PtMap airports, int howMany);
+int loadap(PtMap airports, int howMany);
 
-void printAirport(PtAirport airport);
+void printAirport(Airport airport);
 
-PtAirport createAirport(char* iatacode, char* airport, char* city, char* state, float latitude, float longitude, int timeZone);
+Airport createAirport(char* iatacode, char* airport, char* city, char* state, float latitude, float longitude, int timeZone);

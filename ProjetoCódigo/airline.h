@@ -5,11 +5,9 @@ typedef struct airline {
     char name[100];
 } Airline;
 
-typedef Airline *PtAirline;
 
+int loadar(Airline* airlines, int howMany);
 
-int loadap(PtAirline airlines[], int howMany);
+Airline airlineCreate(char* iatacode, char* name);
 
-PtAirline airlineCreate(char* iatacode, char* name);
-
-void printAirline(PtAirline airline);
+void printAirline(Airline airline);

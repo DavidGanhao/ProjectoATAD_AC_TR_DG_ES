@@ -3,6 +3,7 @@
 #include <locale.h>
 #include <time.h>
 #include "airline.h"
+#include "airport.h"
 #include "utils.h"
 #include "list.h"
 #include "map.h"
@@ -13,9 +14,13 @@ void waitFunction();
 
 int main()
 {
-	PtAirline airlines[14];
+	Airline* airlines;
+	airlines = (Airline*) malloc(sizeof(Airline)*14);
 
 	loadar(airlines, 14);
+
+	//Airport airport = createAirport("SA","PORTO","CIDADE","ESTADO",321,213,21);
+	//printAirport(airport);
 
 	/*
 	srand(time(NULL));

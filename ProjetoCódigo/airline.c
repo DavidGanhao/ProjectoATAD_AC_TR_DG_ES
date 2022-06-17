@@ -5,7 +5,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-int loadar(PtAirline airlines[], int howMany){
+int loadar(Airline* airlines, int howMany){
     FILE* stream = fopen("csv_data/airlines.csv","r");
     if(stream == NULL){
         printf("File not found.\n");
@@ -30,16 +30,13 @@ int loadar(PtAirline airlines[], int howMany){
     return count;
 }
 
-PtAirline airlineCreate(char* iatacode, char* name){
-    PtAirline airline = (PtAirline)malloc(sizeof(Airline));
-    if(airline == NULL) return NULL;
-    strcpy(airline->iatacode,iatacode);
-    strcpy(airline->name, name);
+Airline airlineCreate(char* iatacode, char* name){
+    Airline airline;
+    strcpy(airline.iatacode,iatacode);
+    strcpy(airline.name, name);
     return airline;
 }
 
-void printAirline(PtAirline airline){
-    if(airline == NULL)
-        printf("\n(AIRLINE NULL)\n\n");
-    printf("Iatacode: %3s; Name: %-100s\n",airline->iatacode, airline->name);
+void printAirline(Airline airline){
+    printf("Iatacode: %3s; Name: %-100s\n",airline.iatacode, airline.name);
 }

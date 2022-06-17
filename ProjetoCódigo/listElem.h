@@ -1,6 +1,7 @@
 #pragma once
+#include "flight.h"
 
-typedef int ListElem; // Defining ListElem as KahootReport
+typedef Flight ListElem;
 
 /* Function to print a listElem === KahootReport */
 void listElemPrint(ListElem elem);
