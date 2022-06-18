@@ -6,6 +6,7 @@
 #include "input.h"
 #include "airline.h"
 #include "airport.h"
+#include "time.h"
 
 int loadar(Airline* airlines, int howMany){
     FILE* stream = fopen("csv_data/airlines.csv","r");
@@ -39,7 +40,6 @@ int loadap(PtMap airports, int howMany){
         printf("File not found.\n");
         return 0;
     }
-
     int count = 0;
     char line[1024];
     fgets(line, 1024, stream);
@@ -158,27 +158,395 @@ void listAR(PtList flights, Airline* airlines){
     }
 }
 
-void listAP(PtList flights, PtMap airports){
-    if(flights == NULL || airports == NULL) return;
-    if(listIsEmpty(flights)) return;
-    if(mapIsEmpty(airports)) return;
+void topN(PtList flights, int number)
+{
+    int size;
+    listSize(flights, &size);
+    Flight *flightsTemp = (Flight *)malloc(sizeof(Flight) * size);
+    for (int i = 0; i < size; i++)
+    {
+        Flight temp;
+        listGet(flights, i, &temp);
+        flightsTemp[i] = temp;
+    }
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size - 1 - i; j++)
+        {
+            if (flightsTemp[j].arrivalDelay == flightsTemp[j + 1].arrivalDelay)
+            {
+                if (flightsTemp[j].flightNumber > flightsTemp[j + 1].flightNumber)
+                {
+                    swapFlight(&flightsTemp[j], &flightsTemp[j + 1]);
+                }
+            }
+            if (flightsTemp[j].arrivalDelay < flightsTemp[j + 1].arrivalDelay)
+            {
+                swapFlight(&flightsTemp[j], &flightsTemp[j + 1]);
+            }
+        }
+    }
+
+    printf("\n\nFLIGHTS ORDERED BY ARRIVAL DELAY (%d)\n\n", number);
+    timeInfoFlightArrival(flightsTemp, 0, number);
+    printf("\n\nFINISHED\n\n");
+}
+
+void tsp(PtList flights, PtMap airports, MapKey airportIataCode)
+{
+    if (flights == NULL || airports == NULL)
+    {
+        printf("\nImpossible to make operation\n\n");
+        return;
+    }
+}
+
+int travelTimeFromAirportToAirport(PtList flights, char *airportOrigin, char *airportDestiny)
+{
+
+}
+
+void showAll(PtList flights)
+{
+    bool condition = true;
+    int choice = -1;
+    while (condition)
+    {
+        printf("\n\nSHOWALL MENU\n");
+        printf("1 - Show all flights (paginated by 20)\n");
+        printf("2 - Show 100 random flight data\n");
+        printf("3 - GO BACK\n> ");
+        readInteger(&choice);
+        switch (choice)
+        {
+        case 1:
+            showPaginated(flights);
+            break;
+
+        case 2:
+            showRandom(flights);
+            break;
+        case 3:
+            return;
+
+        default:
+            printf("\n\nUnknown answer.\n");
+            break;
+        }
+    }
+}
+
+void showPaginated(PtList flights)
+{
+    bool condition = true;
+    int start = 0;
+    int choice = -1;
+    int size;
+    listSize(flights, &size);
+    Flight *flightsTemp = (Flight *)malloc(sizeof(Flight) * size);
+    for (int i = 0; i < size; i++)
+    {
+        ListElem flight;
+        listGet(flights, i, &flight);
+        flightsTemp[i] = (Flight)flight;
+    }
+    timeInfoFlightArrival(flightsTemp, start, start + 20);
+    while (condition)
+    {
+        printf("\n");
+        printf("\n\nSHOWALL PAGINATED\n");
+        printf("1. Next 20\n");
+        printf("2. Return\n> ");
+        readInteger(&choice);
+        switch (choice)
+        {
+        case 1:
+            start += 20;
+            timeInfoFlightArrival(flightsTemp, start, start + 20);
+            break;
+
+        case 2:
+            condition = false;
+            break;
+
+        default:
+            printf("\n\nUnknown answer.\n");
+            break;
+        }
+    }
+    free(flightsTemp);
+}
+
+void showRandom(PtList flights)
+{
+    Flight *flightsTemp = (Flight *)malloc(sizeof(Flight) * 100);
+    for (int i = 0; i < 100; i++)
+    {
+        ListElem flight;
+        listGet(flights, rand() % 11515 + 1, &flight);
+        flightsTemp[i] = (Flight)flight;
+    }
+    timeInfoFlightArrival(flightsTemp, 0, 100);
+    free(flightsTemp);
+}
+
+void showWF(PtList flights, char *airport)
+{
+    if (flights == NULL)
+        return;
+    if (listIsEmpty(flights))
+        return;
+    PtList newList = getFlights(flights, airport);
+    if (newList == NULL)
+        return;
+    int size;
+    listSize(newList, &size);
+    Flight *flightsTemp = (Flight *)malloc(sizeof(Flight) * size);
+    for (int i = 0; i < size; i++)
+    {
+        ListElem flight;
+        listGet(newList, i, &flight);
+        flightsTemp[i] = (Flight)flight;
+    }
+    timeInfoFlightArrival(flightsTemp, 0, size);
+    listDestroy(&newList);
+}
+
+PtList getFlights(PtList flights, char *airport)
+{
+    PtList newList = listCreate();
+    int count = 0;
+    int size;
+    listSize(flights, &size);
+    for (int i = 0; i < size; i++)
+    {
+        ListElem flight;
+        listGet(flights, i, &flight);
+        if (strcmp(airport, flight.originAirport) == 0)
+        {
+            listAdd(newList, count++, flight);
+        }
+    }
+    if (count == 0)
+    {
+        listDestroy(&newList);
+        printf("\n\nFlight data not available for %s.\n", airport);
+        return NULL;
+    }
+    return newList;
+}
+
+void listAR(PtList flights, Airline *airlines)
+{
+    if (flights == NULL)
+        return;
+    if (listIsEmpty(flights))
+        return;
     int flightSize;
-    int airportSize = 319;
+    int airlineSize = 14;
     listSize(flights, &flightSize);
-    MapKey* keys = mapKeys(airports);
-    for(int i = 0; i < airportSize; i++){
-        Airport airport;
-        mapGet(airports, keys[i], &airport);
-        for(int j = 0; j < flightSize; j++){
+    printf("\n\nLIST OF AIRLINES:\n");
+    for (int i = 0; i < airlineSize; i++)
+    {
+        for (int j = 0; j < flightSize; j++)
+        {
             ListElem flight;
             listGet(flights, j, &flight);
-            if(strcmp(flight.originAirport, airport[i].iataCode) == 0 || strcmp(flight.destinationAirport, airport[i].iataCode) == 0){
-                printAirportForListAP(airports[i]);
+            if (strcmp(airlines[i].code, flight.airline) == 0)
+            {
+                printf("Airline: %s\n", airlines[i].name);
                 break;
             }
         }
     }
 }
+
+void listAP(PtList flights, PtMap airports)
+{
+    if (flights == NULL || airports == NULL)
+        return;
+    if (listIsEmpty(flights))
+        return;
+    if (mapIsEmpty(airports))
+        return;
+    int flightSize;
+    int airportSize = 319;
+    listSize(flights, &flightSize);
+    MapKey *keys = mapKeys(airports);
+    printf("\n\nLIST OF AIRPORTS:\n");
+    for (int i = 0; i < airportSize; i++)
+    {
+        Airport airport;
+        mapGet(airports, keys[i], &airport);
+        for (int j = 0; j < flightSize; j++)
+        {
+            ListElem flight;
+            listGet(flights, j, &flight);
+            if (strcmp(flight.originAirport, keys[i].code) == 0 || strcmp(flight.destinationAirport, keys[i].code) == 0)
+            {
+                printf("%4s : %s; %s; %s\n", airport.iataCode, airport.airport, airport.city, airport.state);
+                break;
+            }
+        }
+    }
+}
+
+void showAP()
+{
+    int count = 0;
+}
+
+void airport_s(PtMap airports)
+{
+    bool condition = true;
+    int choice = -1;
+    int size;
+    mapSize(airports, &size);
+    Airport *airportsTemp = (Airport*) malloc(sizeof(Airport));
+    while (condition)
+    {
+        printf("\n\nAIRPORTS_S Menu\n");
+        printf("1. Sort by City Acending\n");
+        printf("2. Sort by City Descending\n");
+        printf("3. Sort by Latitude from N to S\n");
+        printf("4. Sort by Longitude from E to W\n");
+        printf("5. Return\n> ");
+        readInteger(&choice);
+        switch (choice)
+        {
+        case 1:
+            airportsOrderedCity(airports, size, true, airportsTemp);
+            printAirportsInfo(airportsTemp, 0, size);
+            break;
+        case 2:
+            airportsOrderedCity(airports, size, false, airportsTemp);
+            printAirportsInfo(airportsTemp, 0, size);
+            break;
+        case 3:
+            airportsOrderedLatitude(airports, size, airportsTemp);
+            printAirportsInfo(airportsTemp, 0, size);
+            break;
+        case 4:
+            airportsOrderedLongitude(airports, size, airportsTemp);
+            printAirportsInfo(airportsTemp, 0, size);
+            break;
+        case 5:
+            condition = false;
+            break;
+        default:
+            printf("\n\nUnknown command.\n");
+            break;
+        }
+    }
+    free(airportsTemp);
+}
+
+void airportsOrderedCity(PtMap airports, int size, bool ascending, Airport *airportsTemp)
+{
+    MapKey *keys = mapKeys(airports);
+    for (int i = 0; i < size; i++)
+    {
+        Airport temp;
+        mapGet(airports, keys[i], &temp);
+        airportsTemp[i] = temp;
+    }
+    if (ascending)
+    {
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size - 1 - i; j++)
+            {
+                if (strcmp(airportsTemp[j].city, airportsTemp[j + 1].city) > 0)
+                {
+                    swapAirport(&airportsTemp[j], &airportsTemp[j + 1]);
+                }
+            }
+        }
+    }
+    else
+    {
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size - 1 - i; j++)
+            {
+                if (strcmp(airportsTemp[j].city, airportsTemp[j + 1].city) < 0)
+                {
+                    swapAirport(&airportsTemp[j], &airportsTemp[j + 1]);
+                }
+            }
+        }
+    }
+}
+
+void *airportsOrderedLongitude(PtMap airports, int size, Airport *airportsTemp)
+{
+    MapKey *keys = mapKeys(airports);
+    for (int i = 0; i < size; i++)
+    {
+        Airport temp;
+        mapGet(airports, keys[i], &temp);
+        airportsTemp[i] = temp;
+    }
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size - 1 - i; j++)
+        {
+            if (airportsTemp[j].longitude < airportsTemp[j + 1].longitude)
+            {
+                swapAirport(&airportsTemp[j], &airportsTemp[j + 1]);
+            }
+        }
+    }
+}
+
+void *airportsOrderedLatitude(PtMap airports, int size, Airport *airportsTemp)
+{
+    MapKey *keys = mapKeys(airports);
+    for (int i = 0; i < size; i++)
+    {
+        Airport temp;
+        mapGet(airports, keys[i], &temp);
+        airportsTemp[i] = temp;
+    }
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size - 1 - i; j++)
+        {
+            if (airportsTemp[j].latitude < airportsTemp[j + 1].latitude)
+            {
+                swapAirport(&airportsTemp[j], &airportsTemp[j + 1]);
+            }
+        }
+    }
+}
+
+void ontimeDeparture(PtList flights){
+    if(flights == NULL) return;
+    if(listIsEmpty(flights)) return;
+    int flightSize;
+    listSize(flights, &flightSize);
+    for(int i = 0; i < flightSize; i++){
+        ListElem flight;
+        listGet(flights, i, &flight);
+        if(timeDiffSpecial(flight.scheduledDeparture, flight.departureTime) == 0){
+            printFlight(flights[i]);
+        }
+    }
+}
+
+void ontimeArrival(PtList flights){
+    if(flights == NULL) return;
+    if(listIsEmpty(flights)) return;
+    int flightSize;
+    listSize(flights, &flightSize);
+    for(int i = 0; i < flightSize; i++){
+        ListElem flight;
+        listGet(flights, i, &flight);
+        if(timeDiffSpecial(flight.scheduledArrival, flight.arrivalTime) == 0){
+            printFlight(flights[i]);
+        }
+    }
+}   
 
 void showAP(){
     int count = 0;
