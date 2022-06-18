@@ -12,11 +12,12 @@
 
 
 void mapKeyPrint(MapKey key) {
+	printf("Key -> ");
 	stringCodePrint(key);
 }
 
 void mapValuePrint(MapValue value) {
-	//TODO
+	printf("Airport: %s\n", value.airport);
 }
 
 bool mapKeyEquals(MapKey key1, MapKey key2) {	

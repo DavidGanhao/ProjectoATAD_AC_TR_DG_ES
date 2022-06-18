@@ -19,12 +19,13 @@
 #include <stdbool.h>
 
 #include "stringCode.h"
+#include "airport.h"
 
 /** Key type definition. Change according to the use-case. */
 typedef StringCode MapKey;
 
 /** Value type definition. Change according to the use-case. */
-typedef int MapValue;
+typedef Airport MapValue;
 
 /**
  * @brief Prints a key.

@@ -18,8 +18,10 @@ typedef struct flight {
     int arrivalDelay;
 } Flight;
 
-Flight createFlight(int day, int dayOfWeek, char* airline, int flightNumber, char* originAirport, char* destinationAirport, Time scheduledDeparture, Time departureTime, int distance, Time scheduleArrival,  Time arrivalTime);
+Flight createFlight(int day, int dayOfWeek, char* airline, int flightNumber, char* originAirport, char* destinationAirport, Time scheduledDeparture, Time departureTime, int distance, Time scheduleArrival,  Time arrivalTime, int scheduledTravelTime);
 
 void printFlight(Flight flight);
 
 char* dayOfWeek(int dayOfWeek);
+
+Time convertCharTokenToTime(char* time);

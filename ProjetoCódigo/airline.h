@@ -6,8 +6,6 @@ typedef struct airline {
 } Airline;
 
 
-int loadar(Airline* airlines, int howMany);
-
 Airline airlineCreate(char* iatacode, char* name);
 
 void printAirline(Airline airline);

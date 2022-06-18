@@ -1,5 +1,4 @@
 #pragma once
-#include "map.h"
 
 typedef struct airport {
     char iataCode[4];
@@ -10,10 +9,6 @@ typedef struct airport {
     float longitude;
     int timeZone;
 } Airport;
-
-typedef Airport *PtAirport;
-
-int loadap(PtMap airports, int howMany);
 
 void printAirport(Airport airport);
 

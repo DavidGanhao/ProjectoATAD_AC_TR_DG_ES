@@ -4,18 +4,14 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-int loadap(PtMap airports, int howMany){
-    return 0;
-}
-
 void printAirport(Airport airport){
-    printf("Iatacode: %4s\n", airport.iataCode);
-    printf("Airport: %100s\n", airport.airport);
-    printf("City: %35s\n", airport.city);
-    printf("State: %5s\n", airport.state);
-    printf("Latitude: %5.3f\n", airport.latitude);
-    printf("Longitude: %5.3f\n", airport.longitude);
-    printf("Time Zone: %4d\n", airport.timeZone);
+    printf("Iatacode: %s\n", airport.iataCode);
+    printf("Airport: %s\n", airport.airport);
+    printf("City: %s\n", airport.city);
+    printf("State: %s\n", airport.state);
+    printf("Latitude: %.3f\n", airport.latitude);
+    printf("Longitude: %.3f\n", airport.longitude);
+    printf("Time Zone: %d\n", airport.timeZone);
 }
 
 Airport createAirport(char* iatacode, char* airport, char* city, char* state, float latitude, float longitude, int timeZone){

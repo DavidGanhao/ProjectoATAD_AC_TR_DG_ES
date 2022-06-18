@@ -4,7 +4,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-Flight createFlight(int day, int dayOfWeek, char* airline, int flightNumber, char* originAirport, char* destinationAirport, Time scheduledDeparture, Time departureTime, int distance, Time scheduleArrival, Time arrivalTime){
+Flight createFlight(int day, int dayOfWeek, char* airline, int flightNumber, char* originAirport, char* destinationAirport, Time scheduledDeparture, Time departureTime, int distance, Time scheduleArrival, Time arrivalTime, int scheduledTravelTime){
     Flight flight;
     flight.day = day;
     flight.dayOfWeek = dayOfWeek;
@@ -19,7 +19,7 @@ Flight createFlight(int day, int dayOfWeek, char* airline, int flightNumber, cha
     flight.scheduledArrival = scheduleArrival;
     flight.arrivalTime = arrivalTime;
     flight.arrivalDelay = timeDiffSpecial(scheduleArrival, arrivalTime);
-    flight.scheduledTravelTime = timeDiffSpecial(scheduledDeparture, scheduleArrival);
+    flight.scheduledTravelTime = scheduledTravelTime;
     return flight;
 }
 
@@ -52,4 +52,15 @@ char* dayOfWeek(int dayOfWeek){
     case 7: return "Sunday";
     default: return "UNKNOWN";
     }
+}
+
+Time convertCharTokenToTime(char* time){
+    Time timeToReturn;
+    if(strlen(time) > 4) return timeToReturn;
+    int temp = atoi(time);
+    int hours = temp/100;
+    int minutes = temp-(hours*100);
+    timeToReturn.hour = hours;
+    timeToReturn.min = minutes;
+    return timeToReturn;
 }

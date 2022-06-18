@@ -5,8 +5,13 @@
 #include "list.h"
 #include "map.h"
 
-//Secalhar os airlines poderiam ser o array dinamico em vez de estatico
-void clear(Airline* airlines, int howManyAirlines, PtMap airports, PtList flights);
+int loadap(PtMap airports, int howMany);
+
+int loadar(Airline* airlines, int howMany);
+
+int loadf(PtMap airports, PtList flights, int howMany);
+
+void clear(Airline* airlines, PtMap airports, PtList flights);
 
 void quit(Airline* airlines, PtMap airports, PtList flights);
 
@@ -31,6 +36,8 @@ void topN(PtList flights, int number);
 void tsp(PtList flights, Airport airport);
 
 void airport_s(PtMap airports);
+
+int calculateTravelTime(Airport originAirport, Airport destinationAirport, Time scheduledDeparture, Time scheduleArrival);
 
 
 
