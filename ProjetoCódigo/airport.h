@@ -12,4 +12,6 @@ typedef struct airport {
 
 void printAirport(Airport airport);
 
+void printAirportForListAP(Airport airport);
+
 Airport createAirport(char* iatacode, char* airport, char* city, char* state, float latitude, float longitude, int timeZone);

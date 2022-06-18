@@ -4,6 +4,8 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include "input.h"
+#include "airline.h"
+#include "airport.h"
 
 int loadar(Airline* airlines, int howMany){
     FILE* stream = fopen("csv_data/airlines.csv","r");
@@ -100,7 +102,7 @@ int loadf(PtMap airports, PtList flights, int howMany){
 void clear(Airline* airlines, PtMap airports, PtList flights){
     int airlineSize = 0;
     for(int i = 0; true; i++){
-        if(strlen(airlines[i].iatacode) == 0 || strlen(airlines[i].name) == 0){
+        if(strlen(airlines[i].code) == 0 || strlen(airlines[i].name) == 0){
             airlineSize = i;
             break;
         }
@@ -128,7 +130,58 @@ void quit(Airline* airlines, PtMap airports, PtList flights){
 
 int calculateTravelTime(Airport originAirport, Airport destinationAirport, Time scheduledDeparture, Time scheduleArrival){
     int timeWithoutTimeZone = timeDiffSpecial(scheduledDeparture, scheduleArrival);;
-    int minutesToAdd = (destinationAirport.timeZone - originAirport.timeZone)*60;
-    return (timeWithoutTimeZone+minutesToAdd);
+    int minutesToTakeOut = (destinationAirport.timeZone - originAirport.timeZone)*60;
+    return (timeWithoutTimeZone-minutesToTakeOut);
+}
+
+void showWF(PtList flights){
+    if(flights == NULL) return;
+    if(listIsEmpty(flights)) return;
+
+}
+
+void listAR(PtList flights, Airline* airlines){
+    if(flights == NULL) return;
+    if(listIsEmpty(flights)) return;
+    int flightSize;
+    int airlineSize = 14;
+    listSize(flights, &flightSize);
+    for(int i = 0; i < airlineSize; i++){
+        for(int j = 0; j < flightSize; j++){
+            ListElem flight;
+            listGet(flights, j, &flight);
+            if(strcmp(airlines[i].code, flight.airline) == 0){
+                printAirline(airlines[i]);
+                break;
+            }
+        }
+    }
+}
+
+void listAP(PtList flights, PtMap airports){
+    if(flights == NULL || airports == NULL) return;
+    if(listIsEmpty(flights)) return;
+    if(mapIsEmpty(airports)) return;
+    int flightSize;
+    int airportSize = 319;
+    listSize(flights, &flightSize);
+    MapKey* keys = mapKeys(airports);
+    for(int i = 0; i < airportSize; i++){
+        Airport airport;
+        mapGet(airports, keys[i], &airport);
+        for(int j = 0; j < flightSize; j++){
+            ListElem flight;
+            listGet(flights, j, &flight);
+            if(strcmp(flight.originAirport, airport[i].iataCode) == 0 || strcmp(flight.destinationAirport, airport[i].iataCode) == 0){
+                printAirportForListAP(airports[i]);
+                break;
+            }
+        }
+    }
+}
+
+void showAP(){
+    int count = 0;
+
 }
 
