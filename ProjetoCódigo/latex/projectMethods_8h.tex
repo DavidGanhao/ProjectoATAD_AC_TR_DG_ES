@@ -12,6 +12,8 @@ Definition of all methods that allow the project to run.
 {\ttfamily \#include \char`\"{}map.\+h\char`\"{}}\newline
 Include dependency graph for project\+Methods.\+h\+:
 % FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -94,7 +96,9 @@ int \mbox{\hyperlink{projectMethods_8h_abc65ca818ea9ae6655f8de05eb78220b}{index\
 int \mbox{\hyperlink{projectMethods_8h_ae5241d4796fb8caca8134c2cf3ba6a47}{tsp\+Menu}} ()
 \begin{DoxyCompactList}\small\item\em Displays menu that the user can select one of the options, where it returns the number of the option. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{projectMethods_8h_aab833ecb81da5cc7044ac2e183b02c00}{on\+Time}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} flights, \mbox{\hyperlink{structairline}{Airline}} $\ast$airlines)
-\begin{DoxyCompactList}\small\item\em It calculates the number of flights that were on time on their flight, either on departure and either on arrival. This calculations is done to all airlines and to a single one separated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em It calculates the number of flights that were on time on their flight, either on departure and either on arrival. This calculations is done to all airlines and to a single one separated. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectMethods_8h_a58a17dda6d73e836240f723835b7e5c6}{get\+Flight\+By\+Orig\+Dest}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} flights, \mbox{\hyperlink{mapElem_8h_aea61338cbade3e136ec9d58e7a7065cf}{Map\+Key}} airport\+Orig, \mbox{\hyperlink{mapElem_8h_aea61338cbade3e136ec9d58e7a7065cf}{Map\+Key}} airport\+Dest, \mbox{\hyperlink{structflight}{Flight}} $\ast$flight\+To\+Return)
+\begin{DoxyCompactList}\small\item\em Get the Flight By the airport of origin and destination. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -106,7 +110,7 @@ All the complex methods, base methods and info flight methods.
 David Ganhão, Tomás Ramos e André Caetano. 
 \end{DoxyAuthor}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000011}{Bug}}]No known bugs. \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000015}{Bug}}]No known bugs. \end{DoxyRefDesc}
 
 
 \doxysubsection{Function Documentation}
@@ -319,6 +323,27 @@ Function that shows a list of flights associated to an airport.
 \begin{DoxyReturn}{Returns}
 list with flights. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{projectMethods_8h_a58a17dda6d73e836240f723835b7e5c6}\label{projectMethods_8h_a58a17dda6d73e836240f723835b7e5c6}} 
+\index{projectMethods.h@{projectMethods.h}!getFlightByOrigDest@{getFlightByOrigDest}}
+\index{getFlightByOrigDest@{getFlightByOrigDest}!projectMethods.h@{projectMethods.h}}
+\doxysubsubsection{\texorpdfstring{getFlightByOrigDest()}{getFlightByOrigDest()}}
+{\footnotesize\ttfamily void get\+Flight\+By\+Orig\+Dest (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{flights,  }\item[{\mbox{\hyperlink{mapElem_8h_aea61338cbade3e136ec9d58e7a7065cf}{Map\+Key}}}]{airport\+Orig,  }\item[{\mbox{\hyperlink{mapElem_8h_aea61338cbade3e136ec9d58e7a7065cf}{Map\+Key}}}]{airport\+Dest,  }\item[{\mbox{\hyperlink{structflight}{Flight}} $\ast$}]{flight\+To\+Return }\end{DoxyParamCaption})}
+
+
+
+Get the Flight By the airport of origin and destination. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flights} & -\/ List of flights. \\
+\hline
+{\em airport\+Orig} & -\/ Iata\+Code from the airport of origin. \\
+\hline
+{\em airport\+Dest} & -\/ Iata\+Code from the airport of destination. \\
+\hline
+{\em flight\+To\+Return} & -\/ Flight sent by reference. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{projectMethods_8h_a410354b8edcf3dfb092b8f31879b2d52}\label{projectMethods_8h_a410354b8edcf3dfb092b8f31879b2d52}} 
 \index{projectMethods.h@{projectMethods.h}!getFlights@{getFlights}}
 \index{getFlights@{getFlights}!projectMethods.h@{projectMethods.h}}
@@ -736,6 +761,8 @@ Function that calculates all the possible ways in which a flight corse happens a
 {\em airport\+Iata\+Code} & -\/ Iata\+Code of the Airport \\
 \hline
 \end{DoxyParams}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000016}{Bug}}]Can\textquotesingle{}t consider the times of arrival and departure. \end{DoxyRefDesc}
 \mbox{\Hypertarget{projectMethods_8h_ae5241d4796fb8caca8134c2cf3ba6a47}\label{projectMethods_8h_ae5241d4796fb8caca8134c2cf3ba6a47}} 
 \index{projectMethods.h@{projectMethods.h}!tspMenu@{tspMenu}}
 \index{tspMenu@{tspMenu}!projectMethods.h@{projectMethods.h}}

@@ -1,3 +1,11 @@
+/**
+ * @file flight.c
+ * @brief Implementations of the methods of the flights.
+ * 
+ * @author David Ganhão, Tomás Ramos e André Caetano.
+ * @bug No known bugs.
+ */
+
 #include "flight.h"
 #include <stdlib.h>
 #include <string.h>

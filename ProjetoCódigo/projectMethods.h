@@ -164,6 +164,7 @@ void topN(PtList flights, int number);
  * @param flights - list of flights.
  * @param airport - Airport variable referencing an airport.
  * @param airportIataCode - IataCode of the Airport
+ * @bug Can't consider the times of arrival and departure.
  **/
 void tsp(PtList flights, PtMap airports, int number);
 
@@ -343,7 +344,15 @@ int tspMenu();
  */
 void onTime(PtList flights, Airline* airlines);
 
-
+/**
+ * @brief Get the Flight By the airport of origin and destination.
+ * 
+ * @param flights - List of flights.
+ * @param airportOrig - IataCode from the airport of origin.
+ * @param airportDest - IataCode from the airport of destination.
+ * @param flightToReturn - Flight sent by reference.
+ */
+void getFlightByOrigDest(PtList flights, MapKey airportOrig, MapKey airportDest, Flight* flightToReturn);
 
 
 

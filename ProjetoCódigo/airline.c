@@ -1,3 +1,11 @@
+/**
+ * @file airline.c
+ * @brief Implementations of the methods of the airlines.
+ * 
+ * @author David Ganhão, Tomás Ramos e André Caetano.
+ * @bug No known bugs.
+ */
+
 #include "airline.h"
 #include "input.h"
 #include <stdlib.h>

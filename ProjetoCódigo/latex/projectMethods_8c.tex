@@ -1,0 +1,753 @@
+\hypertarget{projectMethods_8c}{}\doxysection{project\+Methods.\+c File Reference}
+\label{projectMethods_8c}\index{projectMethods.c@{projectMethods.c}}
+
+
+Implementations of all the methods for this project.  
+
+
+{\ttfamily \#include \char`\"{}project\+Methods.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}input.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
+Include dependency graph for project\+Methods.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{projectMethods_8c_a566bc81b5ff79bfc0f24b45018da2c9d}{loadar}} (\mbox{\hyperlink{structairline}{Airline}} $\ast$airlines, int how\+Many)
+\begin{DoxyCompactList}\small\item\em Loads all the airlines from a file to a dinamic array. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{projectMethods_8c_a0881f779ee0827cb1202e2d6e1397e3b}{loadap}} (\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} airports, int how\+Many)
+\begin{DoxyCompactList}\small\item\em Loads all the airports from a file to a map. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{projectMethods_8c_a144d89ddf85f94172f5aab0ba2ec28df}{loadf}} (\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} airports, \mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} flights, int how\+Many)
+\begin{DoxyCompactList}\small\item\em Loads all the flights from a file to a list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectMethods_8c_a9c1290a5373612235c3ec6301b28ba91}{clear}} (\mbox{\hyperlink{structairline}{Airline}} $\ast$airlines, \mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} airports, \mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} flights)
+\begin{DoxyCompactList}\small\item\em Function used to clear the information existent on the memory. It shows the number of registers that were discarded. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectMethods_8c_a74b91a5e98cc3cb5e73e1f5b9fc8d52b}{quit}} (\mbox{\hyperlink{structairline}{Airline}} $\ast$airlines, \mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} airports, \mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} flights)
+\begin{DoxyCompactList}\small\item\em Function used to exit the program. Sets all the collection allocated memory free. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{projectMethods_8c_aea16075d1921ff7de389e25124a9f34f}{calculate\+Travel\+Time}} (\mbox{\hyperlink{structairport}{Airport}} origin\+Airport, \mbox{\hyperlink{structairport}{Airport}} destination\+Airport, \mbox{\hyperlink{structtime}{Time}} scheduled\+Departure, \mbox{\hyperlink{structtime}{Time}} schedule\+Arrival)
+\begin{DoxyCompactList}\small\item\em Function that calculates the travel time of a flight. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectMethods_8c_a28b3d053d8d588cfda118e33a64bbbd7}{topN}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} flights, int number)
+\begin{DoxyCompactList}\small\item\em Function that shows in a decrescent way the data of N flights by the arrival delay time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectMethods_8c_a4f42480a5225b2a35ff7cce08c22e1df}{tsp}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} flights, \mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} airports, int number)
+\begin{DoxyCompactList}\small\item\em Function that calculates all the possible ways in which a flight corse happens and in which the flight ends at the origin airport. It also shows the fastest possible flight in that case. The minimum wait time in between each flight is an hour an a half. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{projectMethods_8c_a9fca09537b258f8f0a80237ad482958b}\label{projectMethods_8c_a9fca09537b258f8f0a80237ad482958b}} 
+int {\bfseries tsp\+Menu} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} flights, \mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} airports)
+\item 
+int \mbox{\hyperlink{projectMethods_8c_af25ad089263965001fe816c31fa951b1}{travel\+Time\+From\+Airport\+To\+Airport}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} flights, \mbox{\hyperlink{structairport}{Airport}} airport\+Origin, \mbox{\hyperlink{structairport}{Airport}} airport\+Destiny)
+\begin{DoxyCompactList}\small\item\em Calculates the time it takes to go from an airport to another. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectMethods_8c_a9a1652d2fda9dd9c191206f7f9d4f67f}{permutations}} (int $\ast$$\ast$array\+Values, int $\ast$array, int left, int right, int index\+Beginning)
+\begin{DoxyCompactList}\small\item\em Calculates all the possibles results from the start of an index. The results appear in this order \{index\+Beginning number\+Between index\+Beginning\}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{projectMethods_8c_a19dacb4e2510132fb5b361253ae21496}{get\+Total\+Travel\+Time}} (int size, int $\ast$array, int $\ast$$\ast$values)
+\begin{DoxyCompactList}\small\item\em Get the Total Travel Time of an array of index. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{projectMethods_8c_abc65ca818ea9ae6655f8de05eb78220b}{index\+With\+Minimum\+Travel\+Time}} (int $\ast$$\ast$array\+Values, int size, int $\ast$$\ast$values, int $\ast$total\+Time)
+\begin{DoxyCompactList}\small\item\em Returns the index of the minimum\+Travel\+Time array. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{projectMethods_8c_a6bb7cbc91f40ca934f73b2cb4e545956}{factorial}} (int number)
+\begin{DoxyCompactList}\small\item\em Calculates the factorial of an number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectMethods_8c_a59d2fddf17bfe332f530115504ff54ea}{swap\+Numbers}} (int $\ast$x, int $\ast$y)
+\begin{DoxyCompactList}\small\item\em Swaps two numbers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectMethods_8c_add394cacfba87006e9f439131188a937}{show\+All}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} flights)
+\begin{DoxyCompactList}\small\item\em Function used to show all flights data available. It can do it paginated or randomly. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectMethods_8c_a6fb12184dd21af2a7ab659489c0bdfa8}{show\+Paginated}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} flights)
+\begin{DoxyCompactList}\small\item\em Shows 20 flights per page. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectMethods_8c_a64915689f1ed9cc395c1d442fdbebccc}{show\+Random}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} flights)
+\begin{DoxyCompactList}\small\item\em Shows 100 flights, randomly. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectMethods_8c_a39a572ec575c404e0066afaef1a37e4c}{show\+WF}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} flights, char $\ast$\mbox{\hyperlink{structairport}{airport}})
+\begin{DoxyCompactList}\small\item\em Function used to show all the flight data from an airport requested to the user. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} \mbox{\hyperlink{projectMethods_8c_a410354b8edcf3dfb092b8f31879b2d52}{get\+Flights}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} flights, char $\ast$\mbox{\hyperlink{structairport}{airport}})
+\begin{DoxyCompactList}\small\item\em Function used to get all the flights from an airport. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectMethods_8c_a82882e73f10c96a5916be21400641a51}{list\+AR}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} flights, \mbox{\hyperlink{structairline}{Airline}} $\ast$airlines)
+\begin{DoxyCompactList}\small\item\em Function used to show a list of airlines with registered flights. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectMethods_8c_ab84b230b4b126b9dca0c596bbb8774bb}{list\+AP}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} flights, \mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} airports)
+\begin{DoxyCompactList}\small\item\em Function used to show a list of airports with registered flights. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectMethods_8c_a8d500ea72ced216ba93e8249d4e4b6ff}{show\+AP}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} flights, \mbox{\hyperlink{structairline}{Airline}} $\ast$airlines, \mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} airports)
+\begin{DoxyCompactList}\small\item\em Function that shows for every known airline the airport list through were the flights pass. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectMethods_8c_a03f7e073a1b933f11d822e13915a2c35}{airport\+\_\+s}} (\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} airports)
+\begin{DoxyCompactList}\small\item\em Function that shows tha airport data ordered by an atribute requested to the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectMethods_8c_ad5207b00190f791a901ce4187c35391b}{airports\+Ordered\+City}} (\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} airports, int size, bool ascending, \mbox{\hyperlink{structairport}{Airport}} $\ast$airports\+Temp)
+\begin{DoxyCompactList}\small\item\em Function that orders the airports by the city. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectMethods_8c_a20fc9029e5acd0890554680ba3284c24}{airports\+Ordered\+Longitude}} (\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} airports, int size, \mbox{\hyperlink{structairport}{Airport}} $\ast$airports\+Temp)
+\begin{DoxyCompactList}\small\item\em Function that orders the airports by longitude. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectMethods_8c_a481c3fe714b1327d28534aaaa49fd60f}{airports\+Ordered\+Latitude}} (\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} airports, int size, \mbox{\hyperlink{structairport}{Airport}} $\ast$airports\+Temp)
+\begin{DoxyCompactList}\small\item\em Function that orders the airports by latitude. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectMethods_8c_a028bf0315e2e02569f4da6f0251603ee}{airports\+Method}} (\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} airports, \mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} flights)
+\begin{DoxyCompactList}\small\item\em Function that. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} \mbox{\hyperlink{projectMethods_8c_a495e9041aeb731e17db0a941972f6723}{airport\+With\+Flights}} (\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} airports, \mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} flights)
+\begin{DoxyCompactList}\small\item\em Function that shows a map with the airports with flights. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} \mbox{\hyperlink{projectMethods_8c_a083bdf0633c96f99903f903da75f8076}{flights\+Associated\+To\+Airport}} (\mbox{\hyperlink{structairport}{Airport}} \mbox{\hyperlink{structairport}{airport}}, \mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} flights)
+\begin{DoxyCompactList}\small\item\em Function that shows a list of flights associated to an airport. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectMethods_8c_aab833ecb81da5cc7044ac2e183b02c00}{on\+Time}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} flights, \mbox{\hyperlink{structairline}{Airline}} $\ast$airlines)
+\begin{DoxyCompactList}\small\item\em It calculates the number of flights that were on time on their flight, either on departure and either on arrival. This calculations is done to all airlines and to a single one separated. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{projectMethods_8c_ab92d04e0ac38af5269997cc6af7ce438}{ontime\+Departure}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} flights, \mbox{\hyperlink{structairline}{Airline}} \mbox{\hyperlink{structairline}{airline}}, int number)
+\begin{DoxyCompactList}\small\item\em Function that returns the number of flights that departured on time or in a tolerance between 0 an 30 minutes. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{projectMethods_8c_acefc9f04fb94f1310e5d4200bb1e8973}{ontime\+Arrival}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} flights, \mbox{\hyperlink{structairline}{Airline}} \mbox{\hyperlink{structairline}{airline}}, int number)
+\begin{DoxyCompactList}\small\item\em Function that returns the number of flights that arrived on time or in a tolerance between 0 an 30 minutes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectMethods_8c_a3aa86f318d2a9a8655f58293de435609}{average}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} flights, char airport\+Iata\+Code\mbox{[}4\mbox{]})
+\begin{DoxyCompactList}\small\item\em Function that shows the average of distances done in every flight for every day, only week days and only weekends. It also shows the average of the distances done by the flights that departured at an airport requested to the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectMethods_8c_a58a17dda6d73e836240f723835b7e5c6}{get\+Flight\+By\+Orig\+Dest}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} flights, \mbox{\hyperlink{mapElem_8h_aea61338cbade3e136ec9d58e7a7065cf}{Map\+Key}} airport\+Orig, \mbox{\hyperlink{mapElem_8h_aea61338cbade3e136ec9d58e7a7065cf}{Map\+Key}} airport\+Dest, \mbox{\hyperlink{structflight}{Flight}} $\ast$flight\+To\+Return)
+\begin{DoxyCompactList}\small\item\em Get the Flight By the airport of origin and destination. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementations of all the methods for this project. 
+
+\begin{DoxyAuthor}{Author}
+David Ganhão, Tomás Ramos e André Caetano. 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000014}{Bug}}]No known bugs. \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{projectMethods_8c_a03f7e073a1b933f11d822e13915a2c35}\label{projectMethods_8c_a03f7e073a1b933f11d822e13915a2c35}} 
+\index{projectMethods.c@{projectMethods.c}!airport\_s@{airport\_s}}
+\index{airport\_s@{airport\_s}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{airport\_s()}{airport\_s()}}
+{\footnotesize\ttfamily void airport\+\_\+s (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}}}]{airports }\end{DoxyParamCaption})}
+
+
+
+Function that shows tha airport data ordered by an atribute requested to the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & -\/ map with airports. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectMethods_8c_a028bf0315e2e02569f4da6f0251603ee}\label{projectMethods_8c_a028bf0315e2e02569f4da6f0251603ee}} 
+\index{projectMethods.c@{projectMethods.c}!airportsMethod@{airportsMethod}}
+\index{airportsMethod@{airportsMethod}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{airportsMethod()}{airportsMethod()}}
+{\footnotesize\ttfamily void airports\+Method (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}}}]{airports,  }\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{flights }\end{DoxyParamCaption})}
+
+
+
+Function that. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & -\/ map with airports. \\
+\hline
+{\em fights} & -\/ list with flights. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectMethods_8c_ad5207b00190f791a901ce4187c35391b}\label{projectMethods_8c_ad5207b00190f791a901ce4187c35391b}} 
+\index{projectMethods.c@{projectMethods.c}!airportsOrderedCity@{airportsOrderedCity}}
+\index{airportsOrderedCity@{airportsOrderedCity}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{airportsOrderedCity()}{airportsOrderedCity()}}
+{\footnotesize\ttfamily void airports\+Ordered\+City (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}}}]{airports,  }\item[{int}]{size,  }\item[{bool}]{ascending,  }\item[{\mbox{\hyperlink{structairport}{Airport}} $\ast$}]{airports\+Temp }\end{DoxyParamCaption})}
+
+
+
+Function that orders the airports by the city. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & -\/ map with airports. \\
+\hline
+{\em size} & -\/ Integer variable referencing a size. \\
+\hline
+{\em ascending} & -\/ boolean variable referencing ascending or descending bu true or false. \\
+\hline
+{\em airports\+Temp} & -\/ Array of airports referencing airports. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectMethods_8c_a481c3fe714b1327d28534aaaa49fd60f}\label{projectMethods_8c_a481c3fe714b1327d28534aaaa49fd60f}} 
+\index{projectMethods.c@{projectMethods.c}!airportsOrderedLatitude@{airportsOrderedLatitude}}
+\index{airportsOrderedLatitude@{airportsOrderedLatitude}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{airportsOrderedLatitude()}{airportsOrderedLatitude()}}
+{\footnotesize\ttfamily void airports\+Ordered\+Latitude (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}}}]{airports,  }\item[{int}]{size,  }\item[{\mbox{\hyperlink{structairport}{Airport}} $\ast$}]{airports\+Temp }\end{DoxyParamCaption})}
+
+
+
+Function that orders the airports by latitude. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & -\/ map with airports. \\
+\hline
+{\em size} & -\/ Integer variable referencing a size. \\
+\hline
+{\em airports\+Temp} & -\/ Array of airports referencing airports. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectMethods_8c_a20fc9029e5acd0890554680ba3284c24}\label{projectMethods_8c_a20fc9029e5acd0890554680ba3284c24}} 
+\index{projectMethods.c@{projectMethods.c}!airportsOrderedLongitude@{airportsOrderedLongitude}}
+\index{airportsOrderedLongitude@{airportsOrderedLongitude}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{airportsOrderedLongitude()}{airportsOrderedLongitude()}}
+{\footnotesize\ttfamily void airports\+Ordered\+Longitude (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}}}]{airports,  }\item[{int}]{size,  }\item[{\mbox{\hyperlink{structairport}{Airport}} $\ast$}]{airports\+Temp }\end{DoxyParamCaption})}
+
+
+
+Function that orders the airports by longitude. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & -\/ map with airports. \\
+\hline
+{\em size} & -\/ Integer variable referencing a size. \\
+\hline
+{\em airports\+Temp} & -\/ Array of airports referencing airports. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectMethods_8c_a495e9041aeb731e17db0a941972f6723}\label{projectMethods_8c_a495e9041aeb731e17db0a941972f6723}} 
+\index{projectMethods.c@{projectMethods.c}!airportWithFlights@{airportWithFlights}}
+\index{airportWithFlights@{airportWithFlights}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{airportWithFlights()}{airportWithFlights()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} airport\+With\+Flights (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}}}]{airports,  }\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{flights }\end{DoxyParamCaption})}
+
+
+
+Function that shows a map with the airports with flights. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & -\/ map with airports. \\
+\hline
+{\em flights} & -\/ list with flights.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+map with airports with flights 
+\end{DoxyReturn}
+\mbox{\Hypertarget{projectMethods_8c_a3aa86f318d2a9a8655f58293de435609}\label{projectMethods_8c_a3aa86f318d2a9a8655f58293de435609}} 
+\index{projectMethods.c@{projectMethods.c}!average@{average}}
+\index{average@{average}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{average()}{average()}}
+{\footnotesize\ttfamily void average (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{flights,  }\item[{char}]{airport\+Iata\+Code\mbox{[}4\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Function that shows the average of distances done in every flight for every day, only week days and only weekends. It also shows the average of the distances done by the flights that departured at an airport requested to the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flights} & -\/ list with flights. \\
+\hline
+{\em airport\+Iata\+Code} & -\/ Array of chars referencing to the iatacode of an airport. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectMethods_8c_aea16075d1921ff7de389e25124a9f34f}\label{projectMethods_8c_aea16075d1921ff7de389e25124a9f34f}} 
+\index{projectMethods.c@{projectMethods.c}!calculateTravelTime@{calculateTravelTime}}
+\index{calculateTravelTime@{calculateTravelTime}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{calculateTravelTime()}{calculateTravelTime()}}
+{\footnotesize\ttfamily int calculate\+Travel\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structairport}{Airport}}}]{origin\+Airport,  }\item[{\mbox{\hyperlink{structairport}{Airport}}}]{destination\+Airport,  }\item[{\mbox{\hyperlink{structtime}{Time}}}]{scheduled\+Departure,  }\item[{\mbox{\hyperlink{structtime}{Time}}}]{schedule\+Arrival }\end{DoxyParamCaption})}
+
+
+
+Function that calculates the travel time of a flight. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin\+Airport} & -\/ Airport variable referencing the origin\+Airport. \\
+\hline
+{\em destination\+Airport} & -\/ Airport variable referencing the destination\+Airport. \\
+\hline
+{\em scheduled\+Departure} & -\/ Time variable referencing the schedule departure. \\
+\hline
+{\em schedule\+Arrival} & -\/ Time variable referencing the schedule arrival.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+time calculated. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{projectMethods_8c_a9c1290a5373612235c3ec6301b28ba91}\label{projectMethods_8c_a9c1290a5373612235c3ec6301b28ba91}} 
+\index{projectMethods.c@{projectMethods.c}!clear@{clear}}
+\index{clear@{clear}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void clear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structairline}{Airline}} $\ast$}]{airlines,  }\item[{\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}}}]{airports,  }\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{flights }\end{DoxyParamCaption})}
+
+
+
+Function used to clear the information existent on the memory. It shows the number of registers that were discarded. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airlines} & -\/ Array of airlines referencing airlines. \\
+\hline
+{\em airport} & -\/ map with airports. \\
+\hline
+{\em flights} & -\/ list with flights. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectMethods_8c_a6bb7cbc91f40ca934f73b2cb4e545956}\label{projectMethods_8c_a6bb7cbc91f40ca934f73b2cb4e545956}} 
+\index{projectMethods.c@{projectMethods.c}!factorial@{factorial}}
+\index{factorial@{factorial}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{factorial()}{factorial()}}
+{\footnotesize\ttfamily int factorial (\begin{DoxyParamCaption}\item[{int}]{number }\end{DoxyParamCaption})}
+
+
+
+Calculates the factorial of an number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & -\/ Number to calculate the factorial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int -\/ Number calculated. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{projectMethods_8c_a083bdf0633c96f99903f903da75f8076}\label{projectMethods_8c_a083bdf0633c96f99903f903da75f8076}} 
+\index{projectMethods.c@{projectMethods.c}!flightsAssociatedToAirport@{flightsAssociatedToAirport}}
+\index{flightsAssociatedToAirport@{flightsAssociatedToAirport}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{flightsAssociatedToAirport()}{flightsAssociatedToAirport()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} flights\+Associated\+To\+Airport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structairport}{Airport}}}]{airport,  }\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{flights }\end{DoxyParamCaption})}
+
+
+
+Function that shows a list of flights associated to an airport. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airport} & -\/ Airport variable referencing an airport. \\
+\hline
+{\em flights} & -\/ list with flights.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list with flights. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{projectMethods_8c_a58a17dda6d73e836240f723835b7e5c6}\label{projectMethods_8c_a58a17dda6d73e836240f723835b7e5c6}} 
+\index{projectMethods.c@{projectMethods.c}!getFlightByOrigDest@{getFlightByOrigDest}}
+\index{getFlightByOrigDest@{getFlightByOrigDest}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{getFlightByOrigDest()}{getFlightByOrigDest()}}
+{\footnotesize\ttfamily void get\+Flight\+By\+Orig\+Dest (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{flights,  }\item[{\mbox{\hyperlink{mapElem_8h_aea61338cbade3e136ec9d58e7a7065cf}{Map\+Key}}}]{airport\+Orig,  }\item[{\mbox{\hyperlink{mapElem_8h_aea61338cbade3e136ec9d58e7a7065cf}{Map\+Key}}}]{airport\+Dest,  }\item[{\mbox{\hyperlink{structflight}{Flight}} $\ast$}]{flight\+To\+Return }\end{DoxyParamCaption})}
+
+
+
+Get the Flight By the airport of origin and destination. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flights} & -\/ List of flights. \\
+\hline
+{\em airport\+Orig} & -\/ Iata\+Code from the airport of origin. \\
+\hline
+{\em airport\+Dest} & -\/ Iata\+Code from the airport of destination. \\
+\hline
+{\em flight\+To\+Return} & -\/ Flight sent by reference. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectMethods_8c_a410354b8edcf3dfb092b8f31879b2d52}\label{projectMethods_8c_a410354b8edcf3dfb092b8f31879b2d52}} 
+\index{projectMethods.c@{projectMethods.c}!getFlights@{getFlights}}
+\index{getFlights@{getFlights}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{getFlights()}{getFlights()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} get\+Flights (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{flights,  }\item[{char $\ast$}]{airport }\end{DoxyParamCaption})}
+
+
+
+Function used to get all the flights from an airport. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flights} & -\/ list with flights. \\
+\hline
+{\em airport} & -\/ airport. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectMethods_8c_a19dacb4e2510132fb5b361253ae21496}\label{projectMethods_8c_a19dacb4e2510132fb5b361253ae21496}} 
+\index{projectMethods.c@{projectMethods.c}!getTotalTravelTime@{getTotalTravelTime}}
+\index{getTotalTravelTime@{getTotalTravelTime}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{getTotalTravelTime()}{getTotalTravelTime()}}
+{\footnotesize\ttfamily int get\+Total\+Travel\+Time (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{int $\ast$}]{array,  }\item[{int $\ast$$\ast$}]{values }\end{DoxyParamCaption})}
+
+
+
+Get the Total Travel Time of an array of index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & -\/ Size of the array. \\
+\hline
+{\em array} & -\/ Array of indexes to calculate the travel time. \\
+\hline
+{\em values} & -\/ Matrix containing all the possible results. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int -\/ Travel time. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{projectMethods_8c_abc65ca818ea9ae6655f8de05eb78220b}\label{projectMethods_8c_abc65ca818ea9ae6655f8de05eb78220b}} 
+\index{projectMethods.c@{projectMethods.c}!indexWithMinimumTravelTime@{indexWithMinimumTravelTime}}
+\index{indexWithMinimumTravelTime@{indexWithMinimumTravelTime}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{indexWithMinimumTravelTime()}{indexWithMinimumTravelTime()}}
+{\footnotesize\ttfamily int index\+With\+Minimum\+Travel\+Time (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{array\+Values,  }\item[{int}]{size,  }\item[{int $\ast$$\ast$}]{values,  }\item[{int $\ast$}]{total\+Time }\end{DoxyParamCaption})}
+
+
+
+Returns the index of the minimum\+Travel\+Time array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+Values} & -\/ Contains all the possible results. \\
+\hline
+{\em size} & -\/ Size of the array. \\
+\hline
+{\em values} & -\/ Matrix containing all the possible results. \\
+\hline
+{\em total\+Time} & -\/ Pointer that receives the total time of travel. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int -\/ Index of the minimum travel time array. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{projectMethods_8c_ab84b230b4b126b9dca0c596bbb8774bb}\label{projectMethods_8c_ab84b230b4b126b9dca0c596bbb8774bb}} 
+\index{projectMethods.c@{projectMethods.c}!listAP@{listAP}}
+\index{listAP@{listAP}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{listAP()}{listAP()}}
+{\footnotesize\ttfamily void list\+AP (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{flights,  }\item[{\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}}}]{airports }\end{DoxyParamCaption})}
+
+
+
+Function used to show a list of airports with registered flights. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flights} & -\/ list with flights. \\
+\hline
+{\em airports} & -\/ map with airports. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectMethods_8c_a82882e73f10c96a5916be21400641a51}\label{projectMethods_8c_a82882e73f10c96a5916be21400641a51}} 
+\index{projectMethods.c@{projectMethods.c}!listAR@{listAR}}
+\index{listAR@{listAR}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{listAR()}{listAR()}}
+{\footnotesize\ttfamily void list\+AR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{flights,  }\item[{\mbox{\hyperlink{structairline}{Airline}} $\ast$}]{airlines }\end{DoxyParamCaption})}
+
+
+
+Function used to show a list of airlines with registered flights. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flights} & -\/ list with flights. \\
+\hline
+{\em airlines} & -\/ array of airlines referencing airlines. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectMethods_8c_a0881f779ee0827cb1202e2d6e1397e3b}\label{projectMethods_8c_a0881f779ee0827cb1202e2d6e1397e3b}} 
+\index{projectMethods.c@{projectMethods.c}!loadap@{loadap}}
+\index{loadap@{loadap}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{loadap()}{loadap()}}
+{\footnotesize\ttfamily int loadap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}}}]{airports,  }\item[{int}]{how\+Many }\end{DoxyParamCaption})}
+
+
+
+Loads all the airports from a file to a map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & -\/ Map of airports. \\
+\hline
+{\em how\+Many} & -\/ How many airports desired to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int -\/ The number of airports added. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{projectMethods_8c_a566bc81b5ff79bfc0f24b45018da2c9d}\label{projectMethods_8c_a566bc81b5ff79bfc0f24b45018da2c9d}} 
+\index{projectMethods.c@{projectMethods.c}!loadar@{loadar}}
+\index{loadar@{loadar}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{loadar()}{loadar()}}
+{\footnotesize\ttfamily int loadar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structairline}{Airline}} $\ast$}]{airlines,  }\item[{int}]{how\+Many }\end{DoxyParamCaption})}
+
+
+
+Loads all the airlines from a file to a dinamic array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airlines} & -\/ Dinamic array of airlines. \\
+\hline
+{\em how\+Many} & -\/ How many airlines desired to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int -\/ The number of airlines added. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{projectMethods_8c_a144d89ddf85f94172f5aab0ba2ec28df}\label{projectMethods_8c_a144d89ddf85f94172f5aab0ba2ec28df}} 
+\index{projectMethods.c@{projectMethods.c}!loadf@{loadf}}
+\index{loadf@{loadf}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{loadf()}{loadf()}}
+{\footnotesize\ttfamily int loadf (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}}}]{airports,  }\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{flights,  }\item[{int}]{how\+Many }\end{DoxyParamCaption})}
+
+
+
+Loads all the flights from a file to a list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & -\/ All airports. \\
+\hline
+{\em flights} & -\/ List of flights. \\
+\hline
+{\em how\+Many} & -\/ How many flights desired to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int -\/ The number of flights added. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{projectMethods_8c_aab833ecb81da5cc7044ac2e183b02c00}\label{projectMethods_8c_aab833ecb81da5cc7044ac2e183b02c00}} 
+\index{projectMethods.c@{projectMethods.c}!onTime@{onTime}}
+\index{onTime@{onTime}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{onTime()}{onTime()}}
+{\footnotesize\ttfamily void on\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{flights,  }\item[{\mbox{\hyperlink{structairline}{Airline}} $\ast$}]{airlines }\end{DoxyParamCaption})}
+
+
+
+It calculates the number of flights that were on time on their flight, either on departure and either on arrival. This calculations is done to all airlines and to a single one separated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flights} & -\/ All flights. \\
+\hline
+{\em airlines} & -\/ All airlines. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectMethods_8c_acefc9f04fb94f1310e5d4200bb1e8973}\label{projectMethods_8c_acefc9f04fb94f1310e5d4200bb1e8973}} 
+\index{projectMethods.c@{projectMethods.c}!ontimeArrival@{ontimeArrival}}
+\index{ontimeArrival@{ontimeArrival}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{ontimeArrival()}{ontimeArrival()}}
+{\footnotesize\ttfamily int ontime\+Arrival (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{flights,  }\item[{\mbox{\hyperlink{structairline}{Airline}}}]{airline,  }\item[{int}]{number }\end{DoxyParamCaption})}
+
+
+
+Function that returns the number of flights that arrived on time or in a tolerance between 0 an 30 minutes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flights} & -\/ list with flights. \\
+\hline
+{\em number} & -\/ integer variable referecing to a number.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of flights on time (arrival) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{projectMethods_8c_ab92d04e0ac38af5269997cc6af7ce438}\label{projectMethods_8c_ab92d04e0ac38af5269997cc6af7ce438}} 
+\index{projectMethods.c@{projectMethods.c}!ontimeDeparture@{ontimeDeparture}}
+\index{ontimeDeparture@{ontimeDeparture}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{ontimeDeparture()}{ontimeDeparture()}}
+{\footnotesize\ttfamily int ontime\+Departure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{flights,  }\item[{\mbox{\hyperlink{structairline}{Airline}}}]{airline,  }\item[{int}]{number }\end{DoxyParamCaption})}
+
+
+
+Function that returns the number of flights that departured on time or in a tolerance between 0 an 30 minutes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flights} & -\/ list with flights. \\
+\hline
+{\em number} & -\/ integer variable referecing to a number.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of flights on time (departure) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{projectMethods_8c_a9a1652d2fda9dd9c191206f7f9d4f67f}\label{projectMethods_8c_a9a1652d2fda9dd9c191206f7f9d4f67f}} 
+\index{projectMethods.c@{projectMethods.c}!permutations@{permutations}}
+\index{permutations@{permutations}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{permutations()}{permutations()}}
+{\footnotesize\ttfamily void permutations (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{array\+Values,  }\item[{int $\ast$}]{array,  }\item[{int}]{left,  }\item[{int}]{right,  }\item[{int}]{index\+Beginning }\end{DoxyParamCaption})}
+
+
+
+Calculates all the possibles results from the start of an index. The results appear in this order \{index\+Beginning number\+Between index\+Beginning\}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+Values} & -\/ Array thats gonna contain all the possible results. \\
+\hline
+{\em array} & -\/ Array with the possible resutls. \\
+\hline
+{\em left} & -\/ Where we begin the permutations. \\
+\hline
+{\em right} & -\/ Where we end the permutations. \\
+\hline
+{\em index\+Beginning} & -\/ The index that must be at the begin of the permutation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectMethods_8c_a74b91a5e98cc3cb5e73e1f5b9fc8d52b}\label{projectMethods_8c_a74b91a5e98cc3cb5e73e1f5b9fc8d52b}} 
+\index{projectMethods.c@{projectMethods.c}!quit@{quit}}
+\index{quit@{quit}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{quit()}{quit()}}
+{\footnotesize\ttfamily void quit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structairline}{Airline}} $\ast$}]{airlines,  }\item[{\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}}}]{airports,  }\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{flights }\end{DoxyParamCaption})}
+
+
+
+Function used to exit the program. Sets all the collection allocated memory free. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airlines} & -\/ Array of airlines referencing airlines. \\
+\hline
+{\em airport} & -\/ map with airports. \\
+\hline
+{\em flights} & -\/ list with flights. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectMethods_8c_add394cacfba87006e9f439131188a937}\label{projectMethods_8c_add394cacfba87006e9f439131188a937}} 
+\index{projectMethods.c@{projectMethods.c}!showAll@{showAll}}
+\index{showAll@{showAll}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{showAll()}{showAll()}}
+{\footnotesize\ttfamily void show\+All (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{flights }\end{DoxyParamCaption})}
+
+
+
+Function used to show all flights data available. It can do it paginated or randomly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flights} & -\/ list with flights. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectMethods_8c_a8d500ea72ced216ba93e8249d4e4b6ff}\label{projectMethods_8c_a8d500ea72ced216ba93e8249d4e4b6ff}} 
+\index{projectMethods.c@{projectMethods.c}!showAP@{showAP}}
+\index{showAP@{showAP}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{showAP()}{showAP()}}
+{\footnotesize\ttfamily void show\+AP (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{flights,  }\item[{\mbox{\hyperlink{structairline}{Airline}} $\ast$}]{airlines,  }\item[{\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}}}]{airports }\end{DoxyParamCaption})}
+
+
+
+Function that shows for every known airline the airport list through were the flights pass. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flight} & -\/ list with flights. \\
+\hline
+{\em airlines} & -\/ Array with airlines referencing airlines. \\
+\hline
+{\em airports} & -\/ map with airports. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectMethods_8c_a6fb12184dd21af2a7ab659489c0bdfa8}\label{projectMethods_8c_a6fb12184dd21af2a7ab659489c0bdfa8}} 
+\index{projectMethods.c@{projectMethods.c}!showPaginated@{showPaginated}}
+\index{showPaginated@{showPaginated}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{showPaginated()}{showPaginated()}}
+{\footnotesize\ttfamily void show\+Paginated (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{flights }\end{DoxyParamCaption})}
+
+
+
+Shows 20 flights per page. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flights} & -\/ All flights. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectMethods_8c_a64915689f1ed9cc395c1d442fdbebccc}\label{projectMethods_8c_a64915689f1ed9cc395c1d442fdbebccc}} 
+\index{projectMethods.c@{projectMethods.c}!showRandom@{showRandom}}
+\index{showRandom@{showRandom}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{showRandom()}{showRandom()}}
+{\footnotesize\ttfamily void show\+Random (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{flights }\end{DoxyParamCaption})}
+
+
+
+Shows 100 flights, randomly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flights} & -\/ All flights. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectMethods_8c_a39a572ec575c404e0066afaef1a37e4c}\label{projectMethods_8c_a39a572ec575c404e0066afaef1a37e4c}} 
+\index{projectMethods.c@{projectMethods.c}!showWF@{showWF}}
+\index{showWF@{showWF}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{showWF()}{showWF()}}
+{\footnotesize\ttfamily void show\+WF (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{flights,  }\item[{char $\ast$}]{airport }\end{DoxyParamCaption})}
+
+
+
+Function used to show all the flight data from an airport requested to the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flights} & -\/ list with flights. \\
+\hline
+{\em airport} & -\/ array of chars referenncing an airport.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list with the flight data. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{projectMethods_8c_a59d2fddf17bfe332f530115504ff54ea}\label{projectMethods_8c_a59d2fddf17bfe332f530115504ff54ea}} 
+\index{projectMethods.c@{projectMethods.c}!swapNumbers@{swapNumbers}}
+\index{swapNumbers@{swapNumbers}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{swapNumbers()}{swapNumbers()}}
+{\footnotesize\ttfamily void swap\+Numbers (\begin{DoxyParamCaption}\item[{int $\ast$}]{x,  }\item[{int $\ast$}]{y }\end{DoxyParamCaption})}
+
+
+
+Swaps two numbers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & -\/ Number to swap. \\
+\hline
+{\em y} & -\/ Number to swap. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectMethods_8c_a28b3d053d8d588cfda118e33a64bbbd7}\label{projectMethods_8c_a28b3d053d8d588cfda118e33a64bbbd7}} 
+\index{projectMethods.c@{projectMethods.c}!topN@{topN}}
+\index{topN@{topN}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{topN()}{topN()}}
+{\footnotesize\ttfamily void topN (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{flights,  }\item[{int}]{number }\end{DoxyParamCaption})}
+
+
+
+Function that shows in a decrescent way the data of N flights by the arrival delay time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flights} & -\/ list with flights. \\
+\hline
+{\em number} & -\/ Integer variable referencing a number. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectMethods_8c_af25ad089263965001fe816c31fa951b1}\label{projectMethods_8c_af25ad089263965001fe816c31fa951b1}} 
+\index{projectMethods.c@{projectMethods.c}!travelTimeFromAirportToAirport@{travelTimeFromAirportToAirport}}
+\index{travelTimeFromAirportToAirport@{travelTimeFromAirportToAirport}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{travelTimeFromAirportToAirport()}{travelTimeFromAirportToAirport()}}
+{\footnotesize\ttfamily int travel\+Time\+From\+Airport\+To\+Airport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{flights,  }\item[{\mbox{\hyperlink{structairport}{Airport}}}]{airport\+Origin,  }\item[{\mbox{\hyperlink{structairport}{Airport}}}]{airport\+Destiny }\end{DoxyParamCaption})}
+
+
+
+Calculates the time it takes to go from an airport to another. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flights} & -\/ All flights. \\
+\hline
+{\em airport\+Origin} & -\/ Origin airport. \\
+\hline
+{\em airport\+Destiny} & -\/ Destiny airport. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int -\/ Travel time. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{projectMethods_8c_a4f42480a5225b2a35ff7cce08c22e1df}\label{projectMethods_8c_a4f42480a5225b2a35ff7cce08c22e1df}} 
+\index{projectMethods.c@{projectMethods.c}!tsp@{tsp}}
+\index{tsp@{tsp}!projectMethods.c@{projectMethods.c}}
+\doxysubsubsection{\texorpdfstring{tsp()}{tsp()}}
+{\footnotesize\ttfamily void tsp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{flights,  }\item[{\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}}}]{airports,  }\item[{int}]{number }\end{DoxyParamCaption})}
+
+
+
+Function that calculates all the possible ways in which a flight corse happens and in which the flight ends at the origin airport. It also shows the fastest possible flight in that case. The minimum wait time in between each flight is an hour an a half. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flights} & -\/ list of flights. \\
+\hline
+{\em airport} & -\/ Airport variable referencing an airport. \\
+\hline
+{\em airport\+Iata\+Code} & -\/ Iata\+Code of the Airport \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000016}{Bug}}]Can\textquotesingle{}t consider the times of arrival and departure. \end{DoxyRefDesc}

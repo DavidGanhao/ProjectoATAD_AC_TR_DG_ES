@@ -1,0 +1,70 @@
+\hypertarget{airline_8c}{}\doxysection{airline.\+c File Reference}
+\label{airline_8c}\index{airline.c@{airline.c}}
+
+
+Implementations of the methods of the airlines.  
+
+
+{\ttfamily \#include \char`\"{}airline.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}input.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for airline.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structairline}{Airline}} \mbox{\hyperlink{airline_8c_ab6a98bc06b31f9e133e8ad5ac893bcc4}{airline\+Create}} (char $\ast$iatacode, char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Constructor of an Airline. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{airline_8c_ad8dd7e102994073ceab04de38d40379d}{print\+Airline}} (\mbox{\hyperlink{structairline}{Airline}} \mbox{\hyperlink{structairline}{airline}})
+\begin{DoxyCompactList}\small\item\em Function that shows the information of an Airline. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementations of the methods of the airlines. 
+
+\begin{DoxyAuthor}{Author}
+David Ganhão, Tomás Ramos e André Caetano. 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000001}{Bug}}]No known bugs. \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{airline_8c_ab6a98bc06b31f9e133e8ad5ac893bcc4}\label{airline_8c_ab6a98bc06b31f9e133e8ad5ac893bcc4}} 
+\index{airline.c@{airline.c}!airlineCreate@{airlineCreate}}
+\index{airlineCreate@{airlineCreate}!airline.c@{airline.c}}
+\doxysubsubsection{\texorpdfstring{airlineCreate()}{airlineCreate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structairline}{Airline}} airline\+Create (\begin{DoxyParamCaption}\item[{char $\ast$}]{iatacode,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Constructor of an Airline. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iatacode} & code of the Airline \\
+\hline
+{\em name} & name of the Airline \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Created Airline 
+\end{DoxyReturn}
+\mbox{\Hypertarget{airline_8c_ad8dd7e102994073ceab04de38d40379d}\label{airline_8c_ad8dd7e102994073ceab04de38d40379d}} 
+\index{airline.c@{airline.c}!printAirline@{printAirline}}
+\index{printAirline@{printAirline}!airline.c@{airline.c}}
+\doxysubsubsection{\texorpdfstring{printAirline()}{printAirline()}}
+{\footnotesize\ttfamily void print\+Airline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structairline}{Airline}}}]{airline }\end{DoxyParamCaption})}
+
+
+
+Function that shows the information of an Airline. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airline} & -\/ Airline to show \\
+\hline
+\end{DoxyParams}

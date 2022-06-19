@@ -82,6 +82,12 @@ Include dependency graph for projectMethods.h:</div>
 <div class="center"><img src="projectMethods_8h__incl.png" border="0" usemap="#projectMethods_8h" alt=""/></div>
 <!-- MAP 0 -->
 </div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="projectMethods_8h__dep__incl.png" border="0" usemap="#projectMethods_8hdep" alt=""/></div>
+<!-- MAP 1 -->
+</div>
 </div>
 <p><a href="projectMethods_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -201,12 +207,15 @@ Functions</h2></td></tr>
 <tr class="memitem:aab833ecb81da5cc7044ac2e183b02c00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="projectMethods_8h.html#aab833ecb81da5cc7044ac2e183b02c00">onTime</a> (<a class="el" href="list_8h.html#a39f79d75aefe285077489fdab3a43d76">PtList</a> flights, <a class="el" href="structairline.html">Airline</a> *airlines)</td></tr>
 <tr class="memdesc:aab833ecb81da5cc7044ac2e183b02c00"><td class="mdescLeft">&#160;</td><td class="mdescRight">It calculates the number of flights that were on time on their flight, either on departure and either on arrival. This calculations is done to all airlines and to a single one separated.  <a href="projectMethods_8h.html#aab833ecb81da5cc7044ac2e183b02c00">More...</a><br /></td></tr>
 <tr class="separator:aab833ecb81da5cc7044ac2e183b02c00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58a17dda6d73e836240f723835b7e5c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="projectMethods_8h.html#a58a17dda6d73e836240f723835b7e5c6">getFlightByOrigDest</a> (<a class="el" href="list_8h.html#a39f79d75aefe285077489fdab3a43d76">PtList</a> flights, <a class="el" href="mapElem_8h.html#aea61338cbade3e136ec9d58e7a7065cf">MapKey</a> airportOrig, <a class="el" href="mapElem_8h.html#aea61338cbade3e136ec9d58e7a7065cf">MapKey</a> airportDest, <a class="el" href="structflight.html">Flight</a> *flightToReturn)</td></tr>
+<tr class="memdesc:a58a17dda6d73e836240f723835b7e5c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Flight By the airport of origin and destination.  <a href="projectMethods_8h.html#a58a17dda6d73e836240f723835b7e5c6">More...</a><br /></td></tr>
+<tr class="separator:a58a17dda6d73e836240f723835b7e5c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Definition of all methods that allow the project to run. </p>
 <p>All the complex methods, base methods and info flight methods.</p>
 <dl class="section author"><dt>Author</dt><dd>David Ganhão, Tomás Ramos e André Caetano. </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000011">Bug:</a></b></dt><dd>No known bugs. </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000015">Bug:</a></b></dt><dd>No known bugs. </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a03f7e073a1b933f11d822e13915a2c35"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a03f7e073a1b933f11d822e13915a2c35">&#9670;&nbsp;</a></span>airport_s()</h2>
@@ -643,6 +652,57 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>list with flights. </dd></dl>
+
+</div>
+</div>
+<a id="a58a17dda6d73e836240f723835b7e5c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58a17dda6d73e836240f723835b7e5c6">&#9670;&nbsp;</a></span>getFlightByOrigDest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void getFlightByOrigDest </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="list_8h.html#a39f79d75aefe285077489fdab3a43d76">PtList</a>&#160;</td>
+          <td class="paramname"><em>flights</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mapElem_8h.html#aea61338cbade3e136ec9d58e7a7065cf">MapKey</a>&#160;</td>
+          <td class="paramname"><em>airportOrig</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mapElem_8h.html#aea61338cbade3e136ec9d58e7a7065cf">MapKey</a>&#160;</td>
+          <td class="paramname"><em>airportDest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structflight.html">Flight</a> *&#160;</td>
+          <td class="paramname"><em>flightToReturn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Flight By the airport of origin and destination. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flights</td><td>- List of flights. </td></tr>
+    <tr><td class="paramname">airportOrig</td><td>- IataCode from the airport of origin. </td></tr>
+    <tr><td class="paramname">airportDest</td><td>- IataCode from the airport of destination. </td></tr>
+    <tr><td class="paramname">flightToReturn</td><td>- Flight sent by reference. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1522,6 +1582,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000016">Bug:</a></b></dt><dd>Can't consider the times of arrival and departure. </dd></dl>
 
 </div>
 </div>

@@ -1,3 +1,11 @@
+/**
+ * @file projectMethods.c
+ * @brief Implementations of all the methods for this project.
+ * 
+ * @author David Ganhão, Tomás Ramos e André Caetano.
+ * @bug No known bugs.
+ */
+
 #include "projectMethods.h"
 #include <stdlib.h>
 #include <string.h>
@@ -283,12 +291,20 @@ void tsp(PtList flights, PtMap airports, int number)
     permutations(arrayValues, array, 0, sizeOfMap - 1, indexOfAirport);
     int totalTime;
     int index = indexWithMinimumTravelTime(arrayValues, sizeOfMap, travelTimeAirportToAirport, &totalTime);
-    printf("\n\nShortest distance\n");
-    for (int i = 0; i <= sizeOfMap; i++)
-    {
-        printf("%4s %s", keys[arrayValues[index][i]].code, (i == sizeOfMap) ? "" : "-> ");
+    int distance = 0;
+    printf("\n\n ------- PATH ----------------------\n");
+    printf("Ind.   Day   Day Of Week   Airline   Origin   Destination   Scheduled Departure   Scheduled Time   Distance   Schedule Arrival\n");
+    for (int i = 0; i < sizeOfMap; i++)
+    {   
+        Flight flight;
+
+        getFlightByOrigDest(flights, keys[arrayValues[index][i]], keys[arrayValues[index][i+1]], &flight);
+        printf("%-3d    %-3d   %-11s   %-7s   %-6s   %-11s          %02d:%02d               %-8d      %-8d      %02d:%02d\n",
+        i+1, flight.day, dayOfWeek(flight.dayOfWeek), flight.airline, flight.originAirport, flight.destinationAirport, flight.scheduledDeparture.hour, flight.scheduledDeparture.min,
+        flight.scheduledTravelTime, flight.distance, flight.scheduledArrival.hour, flight.scheduledArrival.min);
+        distance += flight.distance;
     }
-    printf("\n\nTime traveled: %5d Minutes\n\n", totalTime);
+    printf("\n\nTime traveled: %5d Minutes\nDistance traveled: %5d miles\n\n", totalTime, distance);
     printf("\n");
 
     mapDestroy(&airportWithFlight);
@@ -1008,4 +1024,17 @@ void average(PtList flights, char airportIataCode[4])
 
     printf("%-7s   %-8.2f   %-14.2f   %-8.2f\n", airportIataCode, everyday, weekDay, weekend);
     listDestroy(&aux);
+}
+
+void getFlightByOrigDest(PtList flights, MapKey airportOrig, MapKey airportDest, Flight* flightToReturn){
+    int size;
+    listSize(flights, &size);
+    for(int i = 0; i < size; i++){
+        Flight flight;
+        listGet(flights, i, &flight);
+        if(equalsStringIgnoreCase(airportOrig.code, flight.originAirport) && equalsStringIgnoreCase(airportDest.code, flight.destinationAirport)){
+            *flightToReturn = flight;
+            break;
+        }
+    }
 }

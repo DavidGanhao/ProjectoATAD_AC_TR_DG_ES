@@ -1,3 +1,11 @@
+/**
+ * @file airport.c
+ * @brief Implementations of the methods of the airports.
+ * 
+ * @author David Ganhão, Tomás Ramos e André Caetano.
+ * @bug No known bugs.
+ */
+
 #include "airport.h"
 #include <stdlib.h>
 #include <string.h>

@@ -1,0 +1,161 @@
+\hypertarget{flight_8c}{}\doxysection{flight.\+c File Reference}
+\label{flight_8c}\index{flight.c@{flight.c}}
+
+
+Implementations of the methods of the flights.  
+
+
+{\ttfamily \#include \char`\"{}flight.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for flight.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structflight}{Flight}} \mbox{\hyperlink{flight_8c_a0d889f7d8c4ff9ee6b7c9fff913f8532}{create\+Flight}} (int day, int \mbox{\hyperlink{flight_8h_a6ffd04450b589368c1b5068edec29ba9}{day\+Of\+Week}}, char $\ast$\mbox{\hyperlink{structairline}{airline}}, int flight\+Number, char $\ast$origin\+Airport, char $\ast$destination\+Airport, \mbox{\hyperlink{structtime}{Time}} scheduled\+Departure, \mbox{\hyperlink{structtime}{Time}} departure\+Time, int distance, \mbox{\hyperlink{structtime}{Time}} schedule\+Arrival, \mbox{\hyperlink{structtime}{Time}} arrival\+Time, int scheduled\+Travel\+Time)
+\begin{DoxyCompactList}\small\item\em Function used to create a flight. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{flight_8c_a691c37d45b670be6ba807b3bc8071be3}{print\+Flight}} (\mbox{\hyperlink{structflight}{Flight}} \mbox{\hyperlink{structflight}{flight}})
+\begin{DoxyCompactList}\small\item\em Function used to print the info of a flight. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{flight_8c_a6ffd04450b589368c1b5068edec29ba9}{day\+Of\+Week}} (int day\+Of\+Week)
+\begin{DoxyCompactList}\small\item\em Function used to return the day of the week using the number on the parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtime}{Time}} \mbox{\hyperlink{flight_8c_abace7c1d17a530e563362b4232a37f18}{convert\+Char\+Token\+To\+Time}} (char $\ast$\mbox{\hyperlink{structtime}{time}})
+\begin{DoxyCompactList}\small\item\em Converts a string to a value of Time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{flight_8c_a9e37744901403889933abb8df04a7cab}{time\+Info\+Flight\+Arrival}} (\mbox{\hyperlink{structflight}{Flight}} $\ast$flights, int start, int number)
+\begin{DoxyCompactList}\small\item\em Function used. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{flight_8c_afad7f4069526ac07eb88f47988b134b3}{swap\+Flight}} (\mbox{\hyperlink{structflight}{Flight}} $\ast$flight1, \mbox{\hyperlink{structflight}{Flight}} $\ast$flight2)
+\begin{DoxyCompactList}\small\item\em Function used to swap 2 flights. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementations of the methods of the flights. 
+
+\begin{DoxyAuthor}{Author}
+David Ganhão, Tomás Ramos e André Caetano. 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000005}{Bug}}]No known bugs. \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{flight_8c_abace7c1d17a530e563362b4232a37f18}\label{flight_8c_abace7c1d17a530e563362b4232a37f18}} 
+\index{flight.c@{flight.c}!convertCharTokenToTime@{convertCharTokenToTime}}
+\index{convertCharTokenToTime@{convertCharTokenToTime}!flight.c@{flight.c}}
+\doxysubsubsection{\texorpdfstring{convertCharTokenToTime()}{convertCharTokenToTime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtime}{Time}} convert\+Char\+Token\+To\+Time (\begin{DoxyParamCaption}\item[{char $\ast$}]{time }\end{DoxyParamCaption})}
+
+
+
+Converts a string to a value of Time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & -\/ String to be converted \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{flight_8c_a0d889f7d8c4ff9ee6b7c9fff913f8532}\label{flight_8c_a0d889f7d8c4ff9ee6b7c9fff913f8532}} 
+\index{flight.c@{flight.c}!createFlight@{createFlight}}
+\index{createFlight@{createFlight}!flight.c@{flight.c}}
+\doxysubsubsection{\texorpdfstring{createFlight()}{createFlight()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structflight}{Flight}} create\+Flight (\begin{DoxyParamCaption}\item[{int}]{day,  }\item[{int}]{day\+Of\+Week,  }\item[{char $\ast$}]{airline,  }\item[{int}]{flight\+Number,  }\item[{char $\ast$}]{origin\+Airport,  }\item[{char $\ast$}]{destination\+Airport,  }\item[{\mbox{\hyperlink{structtime}{Time}}}]{scheduled\+Departure,  }\item[{\mbox{\hyperlink{structtime}{Time}}}]{departure\+Time,  }\item[{int}]{distance,  }\item[{\mbox{\hyperlink{structtime}{Time}}}]{schedule\+Arrival,  }\item[{\mbox{\hyperlink{structtime}{Time}}}]{arrival\+Time,  }\item[{int}]{scheduled\+Travel\+Time }\end{DoxyParamCaption})}
+
+
+
+Function used to create a flight. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em day} & -\/ integer referencing the day of the flight. \\
+\hline
+{\em day\+Of\+Week} & -\/ integer referencing the day of the week on which the flight will happen. \\
+\hline
+{\em airline} & -\/ array of chars referencing the airline. \\
+\hline
+{\em flight\+Number} & -\/ integer referencing the number of the flight in question. \\
+\hline
+{\em origin\+Airport} & -\/ array de chars referencing the origin airport of the flight corse. \\
+\hline
+{\em destination\+Airport} & -\/ array de chars referencing the detination airport of the flight corse. \\
+\hline
+{\em scheduled\+Departure} & -\/ time variable referencing the departure schedule. \\
+\hline
+{\em departure\+Time} & -\/ time variable referencing the departure time. \\
+\hline
+{\em distance} & -\/ integer referencing the distance of the full flight corse. \\
+\hline
+{\em schedule\+Arrival} & -\/ time variable referencing the schedule arrival. \\
+\hline
+{\em arrival\+Time} & -\/ time variable referencing the arrival time.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+flight 
+\end{DoxyReturn}
+\mbox{\Hypertarget{flight_8c_a6ffd04450b589368c1b5068edec29ba9}\label{flight_8c_a6ffd04450b589368c1b5068edec29ba9}} 
+\index{flight.c@{flight.c}!dayOfWeek@{dayOfWeek}}
+\index{dayOfWeek@{dayOfWeek}!flight.c@{flight.c}}
+\doxysubsubsection{\texorpdfstring{dayOfWeek()}{dayOfWeek()}}
+{\footnotesize\ttfamily char$\ast$ day\+Of\+Week (\begin{DoxyParamCaption}\item[{int}]{day\+Of\+Week }\end{DoxyParamCaption})}
+
+
+
+Function used to return the day of the week using the number on the parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em day\+Of\+Week} & -\/ integer referencing to the day of the week. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{flight_8c_a691c37d45b670be6ba807b3bc8071be3}\label{flight_8c_a691c37d45b670be6ba807b3bc8071be3}} 
+\index{flight.c@{flight.c}!printFlight@{printFlight}}
+\index{printFlight@{printFlight}!flight.c@{flight.c}}
+\doxysubsubsection{\texorpdfstring{printFlight()}{printFlight()}}
+{\footnotesize\ttfamily void print\+Flight (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflight}{Flight}}}]{flight }\end{DoxyParamCaption})}
+
+
+
+Function used to print the info of a flight. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flight} & -\/ Flight variable referencing a flight. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{flight_8c_afad7f4069526ac07eb88f47988b134b3}\label{flight_8c_afad7f4069526ac07eb88f47988b134b3}} 
+\index{flight.c@{flight.c}!swapFlight@{swapFlight}}
+\index{swapFlight@{swapFlight}!flight.c@{flight.c}}
+\doxysubsubsection{\texorpdfstring{swapFlight()}{swapFlight()}}
+{\footnotesize\ttfamily void swap\+Flight (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflight}{Flight}} $\ast$}]{flight1,  }\item[{\mbox{\hyperlink{structflight}{Flight}} $\ast$}]{flight2 }\end{DoxyParamCaption})}
+
+
+
+Function used to swap 2 flights. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flight1} & -\/ flight to be swaped. \\
+\hline
+{\em flight2} & -\/ flight to be swaped. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{flight_8c_a9e37744901403889933abb8df04a7cab}\label{flight_8c_a9e37744901403889933abb8df04a7cab}} 
+\index{flight.c@{flight.c}!timeInfoFlightArrival@{timeInfoFlightArrival}}
+\index{timeInfoFlightArrival@{timeInfoFlightArrival}!flight.c@{flight.c}}
+\doxysubsubsection{\texorpdfstring{timeInfoFlightArrival()}{timeInfoFlightArrival()}}
+{\footnotesize\ttfamily void time\+Info\+Flight\+Arrival (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflight}{Flight}} $\ast$}]{flights,  }\item[{int}]{start,  }\item[{int}]{number }\end{DoxyParamCaption})}
+
+
+
+Function used. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flights} & -\/ Flights to be printed \\
+\hline
+{\em start} & -\/ integer referencing the start of the array \\
+\hline
+{\em number} & -\/ integer referencing the end of the array \\
+\hline
+\end{DoxyParams}

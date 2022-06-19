@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['timeinfoflightarrival_203',['timeInfoFlightArrival',['../flight_8h.html#a9e37744901403889933abb8df04a7cab',1,'flight.c']]],
-  ['topn_204',['topN',['../projectMethods_8h.html#a28b3d053d8d588cfda118e33a64bbbd7',1,'projectMethods.c']]],
-  ['traveltimefromairporttoairport_205',['travelTimeFromAirportToAirport',['../projectMethods_8h.html#af25ad089263965001fe816c31fa951b1',1,'projectMethods.c']]],
-  ['tsp_206',['tsp',['../projectMethods_8h.html#a4f42480a5225b2a35ff7cce08c22e1df',1,'projectMethods.c']]],
-  ['tspmenu_207',['tspMenu',['../projectMethods_8h.html#ae5241d4796fb8caca8134c2cf3ba6a47',1,'projectMethods.h']]]
+  ['timeinfoflightarrival_213',['timeInfoFlightArrival',['../flight_8c.html#a9e37744901403889933abb8df04a7cab',1,'timeInfoFlightArrival(Flight *flights, int start, int number):&#160;flight.c'],['../flight_8h.html#a9e37744901403889933abb8df04a7cab',1,'timeInfoFlightArrival(Flight *flights, int start, int number):&#160;flight.c']]],
+  ['topn_214',['topN',['../projectMethods_8c.html#a28b3d053d8d588cfda118e33a64bbbd7',1,'topN(PtList flights, int number):&#160;projectMethods.c'],['../projectMethods_8h.html#a28b3d053d8d588cfda118e33a64bbbd7',1,'topN(PtList flights, int number):&#160;projectMethods.c']]],
+  ['traveltimefromairporttoairport_215',['travelTimeFromAirportToAirport',['../projectMethods_8c.html#af25ad089263965001fe816c31fa951b1',1,'travelTimeFromAirportToAirport(PtList flights, Airport airportOrigin, Airport airportDestiny):&#160;projectMethods.c'],['../projectMethods_8h.html#af25ad089263965001fe816c31fa951b1',1,'travelTimeFromAirportToAirport(PtList flights, Airport airportOrigin, Airport airportDestiny):&#160;projectMethods.c']]],
+  ['tsp_216',['tsp',['../projectMethods_8c.html#a4f42480a5225b2a35ff7cce08c22e1df',1,'tsp(PtList flights, PtMap airports, int number):&#160;projectMethods.c'],['../projectMethods_8h.html#a4f42480a5225b2a35ff7cce08c22e1df',1,'tsp(PtList flights, PtMap airports, int number):&#160;projectMethods.c']]],
+  ['tspmenu_217',['tspMenu',['../projectMethods_8h.html#ae5241d4796fb8caca8134c2cf3ba6a47',1,'projectMethods.h']]]
 ];
