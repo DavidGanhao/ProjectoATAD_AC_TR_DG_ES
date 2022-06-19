@@ -2,7 +2,7 @@
 #include <stdbool.h>
 
 typedef struct airline {
-    char iatacode[3];
+    char code[3];
     char name[100];
 } Airline;
 
