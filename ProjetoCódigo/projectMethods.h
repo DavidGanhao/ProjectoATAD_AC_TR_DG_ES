@@ -128,9 +128,9 @@ void topN(PtList flights, int number);
  * 
  * @param flights - list of flights.
  * @param airport - Airport variable referencing an airport.
- *
+ * @param airportIataCode - IataCode of the Airport
  **/
-void tsp(PtList flights, Airport airport);
+void tsp(PtList flights, PtMap airports, MapKey airportIataCode);
 
 /**
  * @brief Function that shows tha airport data ordered by an atribute requested to the user.
