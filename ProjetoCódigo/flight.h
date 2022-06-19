@@ -22,6 +22,10 @@ Flight createFlight(int day, int dayOfWeek, char* airline, int flightNumber, cha
 
 void printFlight(Flight flight);
 
+void timeInfoFlightArrival(Flight* flights, int start, int number);
+
 char* dayOfWeek(int dayOfWeek);
 
 Time convertCharTokenToTime(char* time);
+
+void swapFlight(Flight* flight1, Flight* flight2);
