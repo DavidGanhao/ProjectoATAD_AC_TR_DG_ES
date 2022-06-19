@@ -1,0 +1,92 @@
+\hypertarget{mapElem_8c}{}\doxysection{map\+Elem.\+c File Reference}
+\label{mapElem_8c}\index{mapElem.c@{mapElem.c}}
+
+
+Implements operations for types Map\+Key and Map\+Value.  
+
+
+{\ttfamily \#include \char`\"{}map\+Elem.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for map\+Elem.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{mapElem_8c_a4673823072f0b050208106c69923e120}{map\+Key\+Print}} (\mbox{\hyperlink{mapElem_8h_aea61338cbade3e136ec9d58e7a7065cf}{Map\+Key}} key)
+\begin{DoxyCompactList}\small\item\em Prints a key. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{mapElem_8c_a006f4ab3b5e70b13d759dcfc0427317f}{map\+Value\+Print}} (\mbox{\hyperlink{mapElem_8h_a65b314563b7e6e68bc5f8833b43f1759}{Map\+Value}} value)
+\begin{DoxyCompactList}\small\item\em Prints a value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{mapElem_8c_ae6f8e646b88b8abbc45a1d3dd101eada}{map\+Key\+Equals}} (\mbox{\hyperlink{mapElem_8h_aea61338cbade3e136ec9d58e7a7065cf}{Map\+Key}} key1, \mbox{\hyperlink{mapElem_8h_aea61338cbade3e136ec9d58e7a7065cf}{Map\+Key}} key2)
+\begin{DoxyCompactList}\small\item\em Compares two keys for equality. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements operations for types Map\+Key and Map\+Value. 
+
+\begin{DoxyAuthor}{Author}
+Bruno Silva (\href{mailto:brunomnsilva@gmail.com}{\texttt{ brunomnsilva@gmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000008}{Bug}}]No known bugs. \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mapElem_8c_ae6f8e646b88b8abbc45a1d3dd101eada}\label{mapElem_8c_ae6f8e646b88b8abbc45a1d3dd101eada}} 
+\index{mapElem.c@{mapElem.c}!mapKeyEquals@{mapKeyEquals}}
+\index{mapKeyEquals@{mapKeyEquals}!mapElem.c@{mapElem.c}}
+\doxysubsubsection{\texorpdfstring{mapKeyEquals()}{mapKeyEquals()}}
+{\footnotesize\ttfamily bool map\+Key\+Equals (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mapElem_8h_aea61338cbade3e136ec9d58e7a7065cf}{Map\+Key}}}]{key1,  }\item[{\mbox{\hyperlink{mapElem_8h_aea61338cbade3e136ec9d58e7a7065cf}{Map\+Key}}}]{key2 }\end{DoxyParamCaption})}
+
+
+
+Compares two keys for equality. 
+
+This function is used by the A\+DT Map to perform a key-\/based access to the underlying data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key1} & \mbox{[}in\mbox{]} a key \\
+\hline
+{\em key2} & \mbox{[}in\mbox{]} another key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\textquotesingle{}true\textquotesingle{} if keys match, or 
+
+\textquotesingle{}false\textquotesingle{} if keys don\textquotesingle{}t match. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mapElem_8c_a4673823072f0b050208106c69923e120}\label{mapElem_8c_a4673823072f0b050208106c69923e120}} 
+\index{mapElem.c@{mapElem.c}!mapKeyPrint@{mapKeyPrint}}
+\index{mapKeyPrint@{mapKeyPrint}!mapElem.c@{mapElem.c}}
+\doxysubsubsection{\texorpdfstring{mapKeyPrint()}{mapKeyPrint()}}
+{\footnotesize\ttfamily void map\+Key\+Print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mapElem_8h_aea61338cbade3e136ec9d58e7a7065cf}{Map\+Key}}}]{key }\end{DoxyParamCaption})}
+
+
+
+Prints a key. 
+
+Must be implemented according concrete type of Map\+Key.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & \mbox{[}in\mbox{]} key to print \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{mapElem_8c_a006f4ab3b5e70b13d759dcfc0427317f}\label{mapElem_8c_a006f4ab3b5e70b13d759dcfc0427317f}} 
+\index{mapElem.c@{mapElem.c}!mapValuePrint@{mapValuePrint}}
+\index{mapValuePrint@{mapValuePrint}!mapElem.c@{mapElem.c}}
+\doxysubsubsection{\texorpdfstring{mapValuePrint()}{mapValuePrint()}}
+{\footnotesize\ttfamily void map\+Value\+Print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mapElem_8h_a65b314563b7e6e68bc5f8833b43f1759}{Map\+Value}}}]{value }\end{DoxyParamCaption})}
+
+
+
+Prints a value. 
+
+Must be implemented according concrete type of Map\+Value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \mbox{[}in\mbox{]} value to print \\
+\hline
+\end{DoxyParams}

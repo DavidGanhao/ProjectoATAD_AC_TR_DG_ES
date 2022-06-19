@@ -7,13 +7,61 @@
 #include "input.h"
 #include "utils.h"
 
+/**
+ * @brief Prints the main menu.
+ * 
+ */
 void printCommandsMenu();
+
+/**
+ * @brief Awaits the decision of the user.
+ * 
+ * @param airlines - All of the airlines.
+ * @param airports - All of the airports.
+ * @param flights - All of the flights.
+ */
 void commandsMenuDecision(Airline *airlines, PtMap airports, PtList flights);
+
+/**
+ * @brief Prints the menu of the base commands.
+ * 
+ */
 void printBaseCommands();
+
+/**
+ * @brief Awaits the decision of the user.
+ * 
+ * @param airlines - All of the airlines.
+ * @param airports - All of the airports.
+ * @param flights - All of the flights.
+ */
 void baseCommandsDecision(Airline *airlines, PtMap airports, PtList flights);
+
+/**
+ * @brief Prints the menu of the flights info menu.
+ * 
+ */
 void infoFlightsCommandsMenu();
+
+/**
+ * @brief Awaits the decision of the user.
+ * 
+ * @param airlines - All of the airlines.
+ * @param airports - All of the airports.
+ * @param flights - All of the flights.
+ */
 void complexCommandsDecision(Airline *airlines, PtMap airports, PtList flights);
+
+/**
+ * @brief Prints the menu of the complex commands menu.
+ * 
+ */
 void complexCommands();
+
+/**
+ * @brief Functions that awaits the decision of the user.
+ * 
+ */
 void waitFunction();
 
 int main()

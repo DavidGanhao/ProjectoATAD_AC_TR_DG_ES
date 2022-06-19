@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jun 19 07:59:55 2022
+# Make data base, printed on Sun Jun 19 17:46:47 2022
 
 # Variables
 
@@ -15,7 +17,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # automatic
 ?F = $(notdir $?)
 # environment
-WSLENV = VSCODE_WSL_EXT_LOCATION/up
+WSLENV = ELECTRON_RUN_AS_NODE/w:
 # default
 .SHELLFLAGS := -c
 # environment
@@ -27,13 +29,13 @@ VSCODE_LOG_NATIVE = false
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /home/tomasramos123/ProjetoCódigo
+CURDIR := /home/davidganhao/ATAD/PROJ
 # makefile
 SHELL = /bin/sh
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
 # environment
-_ = /home/tomasramos123/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/node
+_ = /mnt/c/Users/Utilizador/AppData/Local/Programs/Microsoft VS Code/bin/code
 # makefile (from 'makefile', line 1)
 MAKEFILE_LIST :=  makefile
 # 'override' directive
@@ -45,15 +47,15 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
-VSCODE_CWD = /mnt/c/Users/carla/AppData/Local/Programs/Microsoft VS Code
+VSCODE_CWD = /mnt/c/Users/Utilizador/AppData/Local/Programs/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/tomasramos123/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Users/carla/AppData/Local/Programs/Python/Python39/Scripts/:/mnt/c/Users/carla/AppData/Local/Programs/Python/Python39/:/mnt/c/Users/carla/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/carla/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/carla/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin
+PATH = /home/davidganhao/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu20.04onWindows_2004.2022.8.0_x64__79rhkp1fndgsc:/mnt/c/Program Files (x86)/Razer Chroma SDK/bin:/mnt/c/Program Files/Razer Chroma SDK/bin:/mnt/c/Program Files (x86)/Razer/ChromaBroadcast/bin:/mnt/c/Program Files/Razer/ChromaBroadcast/bin:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Intel/iCLS Client/:/mnt/c/Program Files/Intel/iCLS Client/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/IPT:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/IPT:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files (x86)/dotnet/:/mnt/c/Program Files/PuTTY/:/mnt/c/WINDOWS/system32/config/systemprofile/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Utilizador/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Utilizador/.dotnet/tools:/mnt/c/Users/Utilizador/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/ProgramData/Utilizador/GitHubDesktop/bin:/mnt/c/Users/Utilizador/AppData/Local/GitHubDesktop/bin:/snap/bin
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-3fa88fb8-284d-4ce9-808b-89893496f076.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-fdeb701b-9f9c-4722-8604-78fdd8bb1819.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -63,17 +65,19 @@ LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-PWD = /home/tomasramos123/ProjetoCódigo
+PWD = /home/davidganhao/ATAD/PROJ
 # default
 .LOADED := 
 # environment
+WSL_INTEROP = /run/WSL/11640_interop
+# environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-HOME = /home/tomasramos123
+HOME = /home/davidganhao
 # environment
 LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
-LOGNAME = tomasramos123
+LOGNAME = davidganhao
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
@@ -87,19 +91,19 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 0
+SHLVL = 1
 # default
 MAKE_VERSION := 4.2.1
 # environment
-USER = tomasramos123
+USER = davidganhao
 # makefile
 .DEFAULT_GOAL := default
 # environment
-NAME = DESKTOP-1LSH0HN
+NAME = Code
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
-VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/carla/.vscode/extensions/ms-vscode-remote.remote-wsl-0.66.3
+VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/Utilizador/.vscode/extensions/ms-vscode-remote.remote-wsl-0.66.3
 # default
 MAKE_COMMAND := make
 # default
@@ -142,8 +146,6 @@ TERM = xterm-256color
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu-20.04
-# environment
-MOTD_SHOWN = update-motd
 # variable set hash-table stats:
 # Load=67/1024=7%, Rehash=0, Collisions=4/92=4%
 
@@ -153,9 +155,9 @@ MOTD_SHOWN = update-motd
 
 # Directories
 
-# . (device 2, inode 4785074604274720): 35 files, no impossibilities.
+# . (device 2064, inode 52235): 36 files, no impossibilities.
 
-# 35 files, no impossibilities in 1 directories.
+# 36 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -220,14 +222,12 @@ clean:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 44 / storage = 418 B / avg = 9 B
-# current buf: size = 8162 B / used = 418 B / count = 44 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 45 / storage = 426 B / avg = 9 B
+# current buf: size = 8162 B / used = 426 B / count = 45 / avg = 9 B
 
-# strcache performance: lookups = 52 / hit rate = 15%
+# strcache performance: lookups = 53 / hit rate = 15%
 # hash-table stats:
-# Load=44/8192=1%, Rehash=0, Collisions=1/52=2%
-# Finished Make data base on Sun Jun 19 07:59:55 2022
+# Load=45/8192=1%, Rehash=0, Collisions=1/53=2%
+# Finished Make data base on Sun Jun 19 17:46:47 2022
 
  
-make: *** No rule to make target 'all'.  Stop.
-

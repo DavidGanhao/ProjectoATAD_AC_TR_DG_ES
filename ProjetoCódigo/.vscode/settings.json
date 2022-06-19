@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "stdio.h": "c"
+        "airport.h": "c",
+        "typeinfo": "c",
+        "input.h": "c"
     }
 }

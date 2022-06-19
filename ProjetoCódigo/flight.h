@@ -1,3 +1,13 @@
+/**
+ * @file flight.h
+ * @brief Definition of the flight in C.
+ * 
+ * Defines the type flight and associated operations.
+ * 
+ * @author David Ganhão, Tomás Ramos e André Caetano.
+ * @bug No known bugs.
+ */
+
 #pragma once
 #include "time.h"
 

@@ -1,0 +1,36 @@
+\href{https://classroom.github.com/online_ide?assignment_repo_id=7781098&assignment_repo_type=AssignmentRepo}{\texttt{ }} \hypertarget{md_README_autotoc_md0}{}\doxysection{Project\+\_\+\+Normal\+\_\+\+Template}\label{md_README_autotoc_md0}
+This is a C program template tailored for\+:
+
+
+\begin{DoxyItemize}
+\item G\+CC, G\+DB, M\+A\+KE, V\+A\+L\+G\+R\+I\+NG and D\+O\+X\+Y\+G\+EN
+\item VS C\+O\+DE editor
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md1}{}\doxysubsection{What\textquotesingle{}s included?}\label{md_README_autotoc_md1}
+\hypertarget{md_README_autotoc_md2}{}\doxysubsubsection{C\+S\+V Files}\label{md_README_autotoc_md2}
+The following {\itshape comma separaved value} (C\+SV) files contain all information that must be imported\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily csv\+\_\+data/flights.\+csv} -\/ Flight data ordered by date.
+\item {\ttfamily csv\+\_\+data/airports.\+csv} -\/ Airports information.
+\item {\ttfamily csv\+\_\+data/airline.\+csv} -\/ Airlines information.
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md3}{}\doxyparagraph{Reading C\+S\+V files}\label{md_README_autotoc_md3}
+You have examples on {\itshape parsing} C\+SV files in the course repositories.
+
+Some {\bfseries{useful notes}}\+:
+
+
+\begin{DoxyItemize}
+\item Be aware that you should {\itshape right trim} each C\+SV line before {\itshape tokenizing} the {\itshape string} (see {\ttfamily rtrim}), because there are usually some unwanted characters at the end of each line read, e.\+g., {\itshape newlines} and {\itshape carriage returns}.
+\item The {\ttfamily atof} function expects the decimal point as a {\itshape point} {\ttfamily .}; some values have commas as the decimal point, i.\+e., {\ttfamily ,}. You should use the provided {\ttfamily replace} function to convert them.
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md4}{}\doxysubsubsection{Abstract Data Types}\label{md_README_autotoc_md4}
+Includes the {\bfseries{A\+DT List}} and {\bfseries{A\+DT Map}} to support the project\textquotesingle{}s development.
+
+For each A\+DT, two implementations are provided\+: based on {\itshape array list} and {\itshape linked list}. You should choose the \char`\"{}best\char`\"{} implementation at compile time.\hypertarget{md_README_autotoc_md5}{}\doxysubsubsection{Miscellaneous utilities}\label{md_README_autotoc_md5}
+The following modules are provided; they can be extended/modified, if you wish\+:
+
+
+\begin{DoxyItemize}
+\item $\ast$$\ast${\ttfamily time}$\ast$$\ast$ module\+: time manipulation;
+\item $\ast$$\ast${\ttfamily input}$\ast$$\ast$ module\+: for user data input, includes an updated {\ttfamily split\+String} function which automatically deals with {\itshape windows/linux} C\+SV line terminations. 
+\end{DoxyItemize}

@@ -1,5 +1,5 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/tomasramos123/ProjetoCódigo'
+make: Entering directory '/home/davidganhao/ATAD/PROJ'
 gcc -g -o prog main.c time.c listArrayList.c listElem.c mapElem.c mapArrayList.c stringCode.c input.c utils.c airline.c airport.c flight.c projectMethods.c -lm
-make: Leaving directory '/home/tomasramos123/ProjetoCódigo'
+make: Leaving directory '/home/davidganhao/ATAD/PROJ'
  

@@ -1,0 +1,172 @@
+\hypertarget{airport_8h}{}\doxysection{airport.\+h File Reference}
+\label{airport_8h}\index{airport.h@{airport.h}}
+
+
+Definition of the airport in C.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+Include dependency graph for airport.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structairport}{airport}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{airport_8h_a79acc60a8fddf6b20442ef299c954087}\label{airport_8h_a79acc60a8fddf6b20442ef299c954087}} 
+typedef struct \mbox{\hyperlink{structairport}{airport}} {\bfseries Airport}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{airport_8h_acd984b005b4dc831a86ab4f3de39507d}{print\+Airport}} (\mbox{\hyperlink{structairport}{Airport}} \mbox{\hyperlink{structairport}{airport}})
+\begin{DoxyCompactList}\small\item\em Function used to create an airport. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structairport}{Airport}} \mbox{\hyperlink{airport_8h_a73382fb9bbaabb25ba78ef9350474822}{create\+Airport}} (char $\ast$iatacode, char $\ast$\mbox{\hyperlink{structairport}{airport}}, char $\ast$city, char $\ast$state, float latitude, float longitude, int time\+Zone)
+\begin{DoxyCompactList}\small\item\em Constructor of an Airport. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{airport_8h_a5307bb91237a69a0bbefbad82cfdd155}{print\+Airport\+For\+List\+AP}} (\mbox{\hyperlink{structairport}{Airport}} \mbox{\hyperlink{structairport}{airport}})
+\begin{DoxyCompactList}\small\item\em Function used to print the info of an airport. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{airport_8h_a9a90125da5ed3b56e840e67e9c9634b8}{print\+Airports\+Info}} (\mbox{\hyperlink{structairport}{Airport}} $\ast$airports, int start, int end)
+\begin{DoxyCompactList}\small\item\em Function that shows the informcation of an Airport array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{airport_8h_a3b578a7ee4ba8e1285dfd245eb191381}{print\+Airport\+Info\+Agregated}} (\mbox{\hyperlink{structairport}{Airport}} \mbox{\hyperlink{structairport}{airport}}, int num\+Flights, int num\+Dep\+Delays, float avg\+Dep\+Delays)
+\begin{DoxyCompactList}\small\item\em Function that shows the information in aggregate form of an Airport. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{airport_8h_a2d8ab0820ad8cce29294e6295d0a584d}{swap\+Airport}} (\mbox{\hyperlink{structairport}{Airport}} $\ast$x, \mbox{\hyperlink{structairport}{Airport}} $\ast$y)
+\begin{DoxyCompactList}\small\item\em Function that swaps to Airports. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definition of the airport in C. 
+
+Defines the type airport and associated operations.
+
+\begin{DoxyAuthor}{Author}
+David Ganhão, Tomás Ramos e André Caetano. 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000002}{Bug}}]No known bugs. \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{airport_8h_a73382fb9bbaabb25ba78ef9350474822}\label{airport_8h_a73382fb9bbaabb25ba78ef9350474822}} 
+\index{airport.h@{airport.h}!createAirport@{createAirport}}
+\index{createAirport@{createAirport}!airport.h@{airport.h}}
+\doxysubsubsection{\texorpdfstring{createAirport()}{createAirport()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structairport}{Airport}} create\+Airport (\begin{DoxyParamCaption}\item[{char $\ast$}]{iatacode,  }\item[{char $\ast$}]{airport,  }\item[{char $\ast$}]{city,  }\item[{char $\ast$}]{state,  }\item[{float}]{latitude,  }\item[{float}]{longitude,  }\item[{int}]{time\+Zone }\end{DoxyParamCaption})}
+
+
+
+Constructor of an Airport. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iatacode} & -\/ code of an Airport \\
+\hline
+{\em airport} & -\/ name of an Airport \\
+\hline
+{\em city} & -\/ city of an Airport \\
+\hline
+{\em state} & -\/ state of an Airport \\
+\hline
+{\em latitude} & -\/ latitude of an Airport \\
+\hline
+{\em longitude} & -\/ longitude of an Airport \\
+\hline
+{\em time\+Zone} & -\/ time\+Zone of an Airport \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Airport -\/ Airport created 
+\end{DoxyReturn}
+\mbox{\Hypertarget{airport_8h_acd984b005b4dc831a86ab4f3de39507d}\label{airport_8h_acd984b005b4dc831a86ab4f3de39507d}} 
+\index{airport.h@{airport.h}!printAirport@{printAirport}}
+\index{printAirport@{printAirport}!airport.h@{airport.h}}
+\doxysubsubsection{\texorpdfstring{printAirport()}{printAirport()}}
+{\footnotesize\ttfamily void print\+Airport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structairport}{Airport}}}]{airport }\end{DoxyParamCaption})}
+
+
+
+Function used to create an airport. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airport} & -\/ Airport to show \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{airport_8h_a5307bb91237a69a0bbefbad82cfdd155}\label{airport_8h_a5307bb91237a69a0bbefbad82cfdd155}} 
+\index{airport.h@{airport.h}!printAirportForListAP@{printAirportForListAP}}
+\index{printAirportForListAP@{printAirportForListAP}!airport.h@{airport.h}}
+\doxysubsubsection{\texorpdfstring{printAirportForListAP()}{printAirportForListAP()}}
+{\footnotesize\ttfamily void print\+Airport\+For\+List\+AP (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structairport}{Airport}}}]{airport }\end{DoxyParamCaption})}
+
+
+
+Function used to print the info of an airport. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airport} & -\/ Airport variable referencing an airport. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{airport_8h_a3b578a7ee4ba8e1285dfd245eb191381}\label{airport_8h_a3b578a7ee4ba8e1285dfd245eb191381}} 
+\index{airport.h@{airport.h}!printAirportInfoAgregated@{printAirportInfoAgregated}}
+\index{printAirportInfoAgregated@{printAirportInfoAgregated}!airport.h@{airport.h}}
+\doxysubsubsection{\texorpdfstring{printAirportInfoAgregated()}{printAirportInfoAgregated()}}
+{\footnotesize\ttfamily void print\+Airport\+Info\+Agregated (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structairport}{Airport}}}]{airport,  }\item[{int}]{num\+Flights,  }\item[{int}]{num\+Dep\+Delays,  }\item[{float}]{avg\+Dep\+Delays }\end{DoxyParamCaption})}
+
+
+
+Function that shows the information in aggregate form of an Airport. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airport} & -\/ Airport variable referencing to an airport. \\
+\hline
+{\em num\+Flights} & -\/ Integer variable referencing to the number of flights. \\
+\hline
+{\em num\+Dep\+Delays} & -\/ Integer variable referencing to the number of departures with delay. \\
+\hline
+{\em avg\+Dep\+Delays} & -\/ Float variable referencing to the average of the departures with delay. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{airport_8h_a9a90125da5ed3b56e840e67e9c9634b8}\label{airport_8h_a9a90125da5ed3b56e840e67e9c9634b8}} 
+\index{airport.h@{airport.h}!printAirportsInfo@{printAirportsInfo}}
+\index{printAirportsInfo@{printAirportsInfo}!airport.h@{airport.h}}
+\doxysubsubsection{\texorpdfstring{printAirportsInfo()}{printAirportsInfo()}}
+{\footnotesize\ttfamily void print\+Airports\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structairport}{Airport}} $\ast$}]{airports,  }\item[{int}]{start,  }\item[{int}]{end }\end{DoxyParamCaption})}
+
+
+
+Function that shows the informcation of an Airport array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airports} & -\/ array of airports. \\
+\hline
+{\em start} & -\/ integer variable referecing to the starting index. \\
+\hline
+{\em end} & -\/ integer variable referencing to the end index. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{airport_8h_a2d8ab0820ad8cce29294e6295d0a584d}\label{airport_8h_a2d8ab0820ad8cce29294e6295d0a584d}} 
+\index{airport.h@{airport.h}!swapAirport@{swapAirport}}
+\index{swapAirport@{swapAirport}!airport.h@{airport.h}}
+\doxysubsubsection{\texorpdfstring{swapAirport()}{swapAirport()}}
+{\footnotesize\ttfamily void swap\+Airport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structairport}{Airport}} $\ast$}]{x,  }\item[{\mbox{\hyperlink{structairport}{Airport}} $\ast$}]{y }\end{DoxyParamCaption})}
+
+
+
+Function that swaps to Airports. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & -\/ first Airport to swap \\
+\hline
+{\em y} & -\/ second Airport to swap. \\
+\hline
+{\em y} & -\/ second Airport to swap \\
+\hline
+\end{DoxyParams}

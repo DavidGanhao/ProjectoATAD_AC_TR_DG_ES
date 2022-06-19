@@ -1,0 +1,153 @@
+\hypertarget{input_8c}{}\doxysection{input.\+c File Reference}
+\label{input_8c}\index{input.c@{input.c}}
+
+
+Provides an implementation of \mbox{\hyperlink{input_8h}{input.\+h}}.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}input.\+h\char`\"{}}\newline
+Include dependency graph for input.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{input_8c_acee3bc1638418f65bfd3ba42350798ab}{read\+Integer}} (int $\ast$pt\+Val)
+\begin{DoxyCompactList}\small\item\em Read an integer from standard input. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{input_8c_a4341a9e5068f7ba95a30bfaea80a1daf}{read\+Double}} (double $\ast$pt\+Val)
+\begin{DoxyCompactList}\small\item\em Read a double from standard input. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{input_8c_ac71874860531b91819493506b183b866}{read\+Char}} (char $\ast$pt\+Val)
+\begin{DoxyCompactList}\small\item\em Read a char from standard input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{input_8c_ad8f014b25c31518c3645f7a3dce2bc0f}{read\+String}} (char $\ast$char\+Arr, unsigned int max\+Chars)
+\begin{DoxyCompactList}\small\item\em Reads a \char`\"{}string\char`\"{} from standard input. \end{DoxyCompactList}\item 
+char $\ast$$\ast$ \mbox{\hyperlink{input_8c_a1b3e4cd35e295d1700f54b1e56f1ab9c}{split\+String}} (char $\ast$string, int n\+Tokens, const char $\ast$delim)
+\begin{DoxyCompactList}\small\item\em Splits a string given a delimiter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides an implementation of \mbox{\hyperlink{input_8h}{input.\+h}}. 
+
+\begin{DoxyAuthor}{Author}
+Bruno Silva (\href{mailto:bruno.silva@estsetubal.ips.pt}{\texttt{ bruno.\+silva@estsetubal.\+ips.\+pt}}) Relies in always reading text and converting to the appropriate data type. Some straighforward validations are implemented. Does not allow trailing spaces in the formats.
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2021-\/02-\/22
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{input_8c_ac71874860531b91819493506b183b866}\label{input_8c_ac71874860531b91819493506b183b866}} 
+\index{input.c@{input.c}!readChar@{readChar}}
+\index{readChar@{readChar}!input.c@{input.c}}
+\doxysubsubsection{\texorpdfstring{readChar()}{readChar()}}
+{\footnotesize\ttfamily bool read\+Char (\begin{DoxyParamCaption}\item[{char $\ast$}]{pt\+Val }\end{DoxyParamCaption})}
+
+
+
+Read a char from standard input. 
+
+Only the first character is consumed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt\+Val} & \mbox{[}out\mbox{]} address of variable to hold the value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if a valid char was parsed 
+
+false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{input_8c_a4341a9e5068f7ba95a30bfaea80a1daf}\label{input_8c_a4341a9e5068f7ba95a30bfaea80a1daf}} 
+\index{input.c@{input.c}!readDouble@{readDouble}}
+\index{readDouble@{readDouble}!input.c@{input.c}}
+\doxysubsubsection{\texorpdfstring{readDouble()}{readDouble()}}
+{\footnotesize\ttfamily bool read\+Double (\begin{DoxyParamCaption}\item[{double $\ast$}]{pt\+Val }\end{DoxyParamCaption})}
+
+
+
+Read a double from standard input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt\+Val} & \mbox{[}out\mbox{]} address of variable to hold the value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if a valid double was parsed 
+
+false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{input_8c_acee3bc1638418f65bfd3ba42350798ab}\label{input_8c_acee3bc1638418f65bfd3ba42350798ab}} 
+\index{input.c@{input.c}!readInteger@{readInteger}}
+\index{readInteger@{readInteger}!input.c@{input.c}}
+\doxysubsubsection{\texorpdfstring{readInteger()}{readInteger()}}
+{\footnotesize\ttfamily bool read\+Integer (\begin{DoxyParamCaption}\item[{int $\ast$}]{pt\+Val }\end{DoxyParamCaption})}
+
+
+
+Read an integer from standard input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt\+Val} & \mbox{[}out\mbox{]} address of variable to hold the value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if a valid integer was parsed 
+
+false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{input_8c_ad8f014b25c31518c3645f7a3dce2bc0f}\label{input_8c_ad8f014b25c31518c3645f7a3dce2bc0f}} 
+\index{input.c@{input.c}!readString@{readString}}
+\index{readString@{readString}!input.c@{input.c}}
+\doxysubsubsection{\texorpdfstring{readString()}{readString()}}
+{\footnotesize\ttfamily void read\+String (\begin{DoxyParamCaption}\item[{char $\ast$}]{char\+Arr,  }\item[{unsigned int}]{max\+Chars }\end{DoxyParamCaption})}
+
+
+
+Reads a \char`\"{}string\char`\"{} from standard input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em char\+Arr} & \mbox{[}out\mbox{]} address of array to hold the text \\
+\hline
+{\em max\+Chars} & \mbox{[}in\mbox{]} maximum characters to read. char\+Array must have at least this size. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{input_8c_a1b3e4cd35e295d1700f54b1e56f1ab9c}\label{input_8c_a1b3e4cd35e295d1700f54b1e56f1ab9c}} 
+\index{input.c@{input.c}!splitString@{splitString}}
+\index{splitString@{splitString}!input.c@{input.c}}
+\doxysubsubsection{\texorpdfstring{splitString()}{splitString()}}
+{\footnotesize\ttfamily char$\ast$$\ast$ split\+String (\begin{DoxyParamCaption}\item[{char $\ast$}]{string,  }\item[{int}]{n\+Tokens,  }\item[{const char $\ast$}]{delim }\end{DoxyParamCaption})}
+
+
+
+Splits a string given a delimiter. 
+
+This function modifies the parameter \textquotesingle{}string\textquotesingle{}, replacing delimiter occurrences by \textquotesingle{}\textbackslash{}0\textquotesingle{} and returns and array of pointers to each invidual tokens.
+
+This array must be free\textquotesingle{}d by the caller.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & \mbox{[}in\mbox{]} the string to split \\
+\hline
+{\em n\+Tokens} & \mbox{[}in\mbox{]} number of required tokens. If there are less tokens than specified, then N\+U\+LL is used for subsequent tokens. \\
+\hline
+{\em delim} & \mbox{[}in\mbox{]} delimiter, usually a single character \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char$\ast$$\ast$ pointer array (of size n\+Fields) to string \char`\"{}tokens\char`\"{}. 
+\end{DoxyReturn}

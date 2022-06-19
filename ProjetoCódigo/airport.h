@@ -1,3 +1,13 @@
+/**
+ * @file airport.h
+ * @brief Definition of the airport in C.
+ * 
+ * Defines the type airport and associated operations.
+ * 
+ * @author David Ganhão, Tomás Ramos e André Caetano.
+ * @bug No known bugs.
+ */
+
 #pragma once
 #include <stdbool.h>
 

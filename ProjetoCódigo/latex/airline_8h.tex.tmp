@@ -1,0 +1,80 @@
+\hypertarget{airline_8h}{}\doxysection{airline.\+h File Reference}
+\label{airline_8h}\index{airline.h@{airline.h}}
+
+
+Definition of the airline in C.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+Include dependency graph for airline.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structairline}{airline}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{airline_8h_acd5dcf7ac9a05e1dc1087335a1a872ca}\label{airline_8h_acd5dcf7ac9a05e1dc1087335a1a872ca}} 
+typedef struct \mbox{\hyperlink{structairline}{airline}} {\bfseries Airline}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structairline}{Airline}} \mbox{\hyperlink{airline_8h_ab6a98bc06b31f9e133e8ad5ac893bcc4}{airline\+Create}} (char $\ast$iatacode, char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Constructor of an Airline. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{airline_8h_ad8dd7e102994073ceab04de38d40379d}{print\+Airline}} (\mbox{\hyperlink{structairline}{Airline}} \mbox{\hyperlink{structairline}{airline}})
+\begin{DoxyCompactList}\small\item\em Function that shows the information of an Airline. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definition of the airline in C. 
+
+Defines the type airline and associated operations.
+
+\begin{DoxyAuthor}{Author}
+David Ganhão, Tomás Ramos e André Caetano. 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000001}{Bug}}]No known bugs. \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{airline_8h_ab6a98bc06b31f9e133e8ad5ac893bcc4}\label{airline_8h_ab6a98bc06b31f9e133e8ad5ac893bcc4}} 
+\index{airline.h@{airline.h}!airlineCreate@{airlineCreate}}
+\index{airlineCreate@{airlineCreate}!airline.h@{airline.h}}
+\doxysubsubsection{\texorpdfstring{airlineCreate()}{airlineCreate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structairline}{Airline}} airline\+Create (\begin{DoxyParamCaption}\item[{char $\ast$}]{iatacode,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Constructor of an Airline. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iatacode} & code of the Airline \\
+\hline
+{\em name} & name of the Airline \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Created Airline 
+\end{DoxyReturn}
+\mbox{\Hypertarget{airline_8h_ad8dd7e102994073ceab04de38d40379d}\label{airline_8h_ad8dd7e102994073ceab04de38d40379d}} 
+\index{airline.h@{airline.h}!printAirline@{printAirline}}
+\index{printAirline@{printAirline}!airline.h@{airline.h}}
+\doxysubsubsection{\texorpdfstring{printAirline()}{printAirline()}}
+{\footnotesize\ttfamily void print\+Airline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structairline}{Airline}}}]{airline }\end{DoxyParamCaption})}
+
+
+
+Function that shows the information of an Airline. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em airline} & -\/ Airline to show \\
+\hline
+\end{DoxyParams}

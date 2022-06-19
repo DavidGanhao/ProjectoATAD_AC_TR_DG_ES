@@ -1,3 +1,13 @@
+/**
+ * @file projectMethods.h
+ * @brief Definition of all methods that allow the project to run.
+ * 
+ *  All the complex methods, base methods and info flight methods.
+ * 
+ * @author David Ganhão, Tomás Ramos e André Caetano.
+ * @bug No known bugs.
+ */
+
 #pragma once
 #include "flight.h"
 #include "airline.h"

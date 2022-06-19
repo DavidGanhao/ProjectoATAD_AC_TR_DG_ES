@@ -1,0 +1,33 @@
+digraph "projectMethods.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="projectMethods.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Definition of all methods that allow the project to run."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="flight.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$flight_8h.html",tooltip="Definition of the flight in C."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="time.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$time_8h_source.html",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="airline.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$airline_8h.html",tooltip="Definition of the airline in C."];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="stdbool.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="airport.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$airport_8h.html",tooltip="Definition of the airport in C."];
+  Node6 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="list.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$list_8h.html",tooltip="Definition of the ADT List in C."];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="listElem.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$listElem_8h_source.html",tooltip=" "];
+  Node8 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="map.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$map_8h.html",tooltip="Definition of the ADT Map in C."];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="mapElem.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mapElem_8h.html",tooltip="Defines the types MapKey and MapValue."];
+  Node10 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="stringCode.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stringCode_8h_source.html",tooltip=" "];
+  Node10 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

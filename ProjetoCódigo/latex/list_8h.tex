@@ -1,0 +1,322 @@
+\hypertarget{list_8h}{}\doxysection{list.\+h File Reference}
+\label{list_8h}\index{list.h@{list.h}}
+
+
+Definition of the A\+DT List in C.  
+
+
+{\ttfamily \#include \char`\"{}list\+Elem.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+Include dependency graph for list.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{list_8h_a81f940e91778ba8d0133430fd5920876}\label{list_8h_a81f940e91778ba8d0133430fd5920876}} 
+\#define {\bfseries L\+I\+S\+T\+\_\+\+OK}~0
+\item 
+\mbox{\Hypertarget{list_8h_a8010c3d97f1984c6a531eaaf3a1b6394}\label{list_8h_a8010c3d97f1984c6a531eaaf3a1b6394}} 
+\#define {\bfseries L\+I\+S\+T\+\_\+\+N\+U\+LL}~1
+\item 
+\mbox{\Hypertarget{list_8h_a9c9805c08422dee700329088b8f997ef}\label{list_8h_a9c9805c08422dee700329088b8f997ef}} 
+\#define {\bfseries L\+I\+S\+T\+\_\+\+N\+O\+\_\+\+M\+E\+M\+O\+RY}~2
+\item 
+\mbox{\Hypertarget{list_8h_aecd78423a409ea41e4562492edacb94d}\label{list_8h_aecd78423a409ea41e4562492edacb94d}} 
+\#define {\bfseries L\+I\+S\+T\+\_\+\+E\+M\+P\+TY}~3
+\item 
+\mbox{\Hypertarget{list_8h_a462c1870ff466d9278a91c7d578a41ed}\label{list_8h_a462c1870ff466d9278a91c7d578a41ed}} 
+\#define {\bfseries L\+I\+S\+T\+\_\+\+F\+U\+LL}~4
+\item 
+\mbox{\Hypertarget{list_8h_aeac4478c37eea24c2fc149f8192f0b14}\label{list_8h_aeac4478c37eea24c2fc149f8192f0b14}} 
+\#define {\bfseries L\+I\+S\+T\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+R\+A\+NK}~5
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structlistImpl}{list\+Impl}} $\ast$ \mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} \mbox{\hyperlink{list_8h_a7fe14a437ed2717e7a28e25c6d2ca921}{list\+Create}} ()
+\begin{DoxyCompactList}\small\item\em Creates a new empty list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{list_8h_a823bf331bc0b61dc58eab37073e0f9d6}{list\+Destroy}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} $\ast$pt\+List)
+\begin{DoxyCompactList}\small\item\em Free all resources of a list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{list_8h_adec0340e8de005a28986d9e49f5c8ecd}{list\+Add}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} list, int rank, \mbox{\hyperlink{structflight}{List\+Elem}} elem)
+\begin{DoxyCompactList}\small\item\em Add an element to a list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{list_8h_a579b2a7b7a2eab651803a832b0469bba}{list\+Remove}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} list, int rank, \mbox{\hyperlink{structflight}{List\+Elem}} $\ast$pt\+Elem)
+\begin{DoxyCompactList}\small\item\em Removes an element from a list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{list_8h_a4e1f1565a859a33f2a0ebf239e338d66}{list\+Get}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} list, int rank, \mbox{\hyperlink{structflight}{List\+Elem}} $\ast$pt\+Elem)
+\begin{DoxyCompactList}\small\item\em Retrieves an element from a list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{list_8h_a2a198a0efe0237b3986e747b51b33f35}{list\+Set}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} list, int rank, \mbox{\hyperlink{structflight}{List\+Elem}} elem, \mbox{\hyperlink{structflight}{List\+Elem}} $\ast$pt\+Old\+Elem)
+\begin{DoxyCompactList}\small\item\em Replaces an element from a list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{list_8h_a4f2a86680e5728fa28f96b70f5e54fad}{list\+Size}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} list, int $\ast$pt\+Size)
+\begin{DoxyCompactList}\small\item\em Retrieves the size of a list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{list_8h_a70a5c19eee756fd5dbd7b01802f983f9}{list\+Is\+Empty}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} list)
+\begin{DoxyCompactList}\small\item\em Checks whether a list is empty. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{list_8h_a9612bd2e0ef3ab88892616150211014a}{list\+Clear}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} list)
+\begin{DoxyCompactList}\small\item\em Clears the contents of a list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{list_8h_a0c7e93253bf3cbc931110db0c2caae61}{list\+Print}} (\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} list)
+\begin{DoxyCompactList}\small\item\em Prints the contents of a list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definition of the A\+DT List in C. 
+
+Defines the type Pt\+List and associated operations.
+
+\begin{DoxyAuthor}{Author}
+Bruno Silva (\href{mailto:brunomnsilva@gmail.com}{\texttt{ brunomnsilva@gmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000004}{Bug}}]No known bugs. \end{DoxyRefDesc}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{list_8h_a39f79d75aefe285077489fdab3a43d76}\label{list_8h_a39f79d75aefe285077489fdab3a43d76}} 
+\index{list.h@{list.h}!PtList@{PtList}}
+\index{PtList@{PtList}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{PtList}{PtList}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structlistImpl}{list\+Impl}}$\ast$ \mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}
+
+Definition of pointer to the data stucture. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{list_8h_adec0340e8de005a28986d9e49f5c8ecd}\label{list_8h_adec0340e8de005a28986d9e49f5c8ecd}} 
+\index{list.h@{list.h}!listAdd@{listAdd}}
+\index{listAdd@{listAdd}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{listAdd()}{listAdd()}}
+{\footnotesize\ttfamily int list\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{list,  }\item[{int}]{rank,  }\item[{\mbox{\hyperlink{structflight}{List\+Elem}}}]{elem }\end{DoxyParamCaption})}
+
+
+
+Add an element to a list. 
+
+The specified rank must be in \mbox{[}0, size\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & \mbox{[}in\mbox{]} pointer to the list \\
+\hline
+{\em rank} & \mbox{[}in\mbox{]} rank for insertion \\
+\hline
+{\em elem} & \mbox{[}in\mbox{]} element to add\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\+I\+S\+T\+\_\+\+OK if successful, or 
+
+L\+I\+S\+T\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+R\+A\+NK if \textquotesingle{}rank\textquotesingle{} is invalid, or 
+
+L\+I\+S\+T\+\_\+\+F\+U\+LL if no capacity available, or 
+
+L\+I\+S\+T\+\_\+\+N\+O\+\_\+\+M\+E\+M\+O\+RY if unsufficient memory for allocation, or 
+
+L\+I\+S\+T\+\_\+\+N\+U\+LL if \textquotesingle{}list\textquotesingle{} is N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{list_8h_a9612bd2e0ef3ab88892616150211014a}\label{list_8h_a9612bd2e0ef3ab88892616150211014a}} 
+\index{list.h@{list.h}!listClear@{listClear}}
+\index{listClear@{listClear}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{listClear()}{listClear()}}
+{\footnotesize\ttfamily int list\+Clear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{list }\end{DoxyParamCaption})}
+
+
+
+Clears the contents of a list. 
+
+This operation will remove all current elements in the list, returning to an empty state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & \mbox{[}in\mbox{]} pointer to the list\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\+I\+S\+T\+\_\+\+OK if successful, or 
+
+L\+I\+S\+T\+\_\+\+N\+U\+LL if \textquotesingle{}list\textquotesingle{} is N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{list_8h_a7fe14a437ed2717e7a28e25c6d2ca921}\label{list_8h_a7fe14a437ed2717e7a28e25c6d2ca921}} 
+\index{list.h@{list.h}!listCreate@{listCreate}}
+\index{listCreate@{listCreate}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{listCreate()}{listCreate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} list\+Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a new empty list. 
+
+\begin{DoxyReturn}{Returns}
+Pt\+List pointer to allocated data structure, or 
+
+N\+U\+LL if unsufficient memory for allocation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{list_8h_a823bf331bc0b61dc58eab37073e0f9d6}\label{list_8h_a823bf331bc0b61dc58eab37073e0f9d6}} 
+\index{list.h@{list.h}!listDestroy@{listDestroy}}
+\index{listDestroy@{listDestroy}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{listDestroy()}{listDestroy()}}
+{\footnotesize\ttfamily int list\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}} $\ast$}]{pt\+List }\end{DoxyParamCaption})}
+
+
+
+Free all resources of a list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt\+List} & \mbox{[}in\mbox{]} A\+D\+D\+R\+E\+SS OF pointer to the list\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\+I\+S\+T\+\_\+\+OK if success, or 
+
+L\+I\+S\+T\+\_\+\+N\+U\+LL if \textquotesingle{}$\ast$pt\+List\textquotesingle{} is N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{list_8h_a4e1f1565a859a33f2a0ebf239e338d66}\label{list_8h_a4e1f1565a859a33f2a0ebf239e338d66}} 
+\index{list.h@{list.h}!listGet@{listGet}}
+\index{listGet@{listGet}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{listGet()}{listGet()}}
+{\footnotesize\ttfamily int list\+Get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{list,  }\item[{int}]{rank,  }\item[{\mbox{\hyperlink{structflight}{List\+Elem}} $\ast$}]{pt\+Elem }\end{DoxyParamCaption})}
+
+
+
+Retrieves an element from a list. 
+
+The specified rank must be in \mbox{[}0, size -\/ 1\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & \mbox{[}in\mbox{]} pointer to the list \\
+\hline
+{\em rank} & \mbox{[}in\mbox{]} rank for retrieval \\
+\hline
+{\em pt\+Elem} & \mbox{[}out\mbox{]} address of variable to hold the value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\+I\+S\+T\+\_\+\+OK if successful and value in \textquotesingle{}pt\+Elem\textquotesingle{}, or 
+
+L\+I\+S\+T\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+R\+A\+NK if \textquotesingle{}rank\textquotesingle{} is invalid, or 
+
+L\+I\+S\+T\+\_\+\+E\+M\+P\+TY if the list is empty, or 
+
+L\+I\+S\+T\+\_\+\+N\+U\+LL if \textquotesingle{}list\textquotesingle{} is N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{list_8h_a70a5c19eee756fd5dbd7b01802f983f9}\label{list_8h_a70a5c19eee756fd5dbd7b01802f983f9}} 
+\index{list.h@{list.h}!listIsEmpty@{listIsEmpty}}
+\index{listIsEmpty@{listIsEmpty}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{listIsEmpty()}{listIsEmpty()}}
+{\footnotesize\ttfamily bool list\+Is\+Empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{list }\end{DoxyParamCaption})}
+
+
+
+Checks whether a list is empty. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & \mbox{[}in\mbox{]} pointer to the list\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\textquotesingle{}true\textquotesingle{} if empty or if \textquotesingle{}list\textquotesingle{} is N\+U\+LL, or 
+
+\textquotesingle{}false\textquotesingle{} it not empty 
+\end{DoxyReturn}
+\mbox{\Hypertarget{list_8h_a0c7e93253bf3cbc931110db0c2caae61}\label{list_8h_a0c7e93253bf3cbc931110db0c2caae61}} 
+\index{list.h@{list.h}!listPrint@{listPrint}}
+\index{listPrint@{listPrint}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{listPrint()}{listPrint()}}
+{\footnotesize\ttfamily void list\+Print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{list }\end{DoxyParamCaption})}
+
+
+
+Prints the contents of a list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & \mbox{[}in\mbox{]} pointer to the list \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{list_8h_a579b2a7b7a2eab651803a832b0469bba}\label{list_8h_a579b2a7b7a2eab651803a832b0469bba}} 
+\index{list.h@{list.h}!listRemove@{listRemove}}
+\index{listRemove@{listRemove}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{listRemove()}{listRemove()}}
+{\footnotesize\ttfamily int list\+Remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{list,  }\item[{int}]{rank,  }\item[{\mbox{\hyperlink{structflight}{List\+Elem}} $\ast$}]{pt\+Elem }\end{DoxyParamCaption})}
+
+
+
+Removes an element from a list. 
+
+The specified rank must be in \mbox{[}0, size -\/ 1\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & \mbox{[}in\mbox{]} pointer to the list \\
+\hline
+{\em rank} & \mbox{[}in\mbox{]} rank for removal \\
+\hline
+{\em pt\+Elem} & \mbox{[}out\mbox{]} address of variable to hold the value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\+I\+S\+T\+\_\+\+OK if successful and value in \textquotesingle{}pt\+Elem\textquotesingle{}, or 
+
+L\+I\+S\+T\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+R\+A\+NK if \textquotesingle{}rank\textquotesingle{} is invalid, or 
+
+L\+I\+S\+T\+\_\+\+E\+M\+P\+TY if the list is empty, or 
+
+L\+I\+S\+T\+\_\+\+N\+U\+LL if \textquotesingle{}list\textquotesingle{} is N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{list_8h_a2a198a0efe0237b3986e747b51b33f35}\label{list_8h_a2a198a0efe0237b3986e747b51b33f35}} 
+\index{list.h@{list.h}!listSet@{listSet}}
+\index{listSet@{listSet}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{listSet()}{listSet()}}
+{\footnotesize\ttfamily int list\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{list,  }\item[{int}]{rank,  }\item[{\mbox{\hyperlink{structflight}{List\+Elem}}}]{elem,  }\item[{\mbox{\hyperlink{structflight}{List\+Elem}} $\ast$}]{pt\+Old\+Elem }\end{DoxyParamCaption})}
+
+
+
+Replaces an element from a list. 
+
+The specified rank must be in \mbox{[}0, size -\/ 1\mbox{]}. This function replaces an element in the specified rank and returns the previous element at that rank.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & \mbox{[}in\mbox{]} pointer to the list \\
+\hline
+{\em rank} & \mbox{[}in\mbox{]} rank for replacement \\
+\hline
+{\em pt\+Old\+Elem} & \mbox{[}out\mbox{]} address of variable to hold the previous value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\+I\+S\+T\+\_\+\+OK if successful and previous value in \textquotesingle{}pt\+Old\+Elem\textquotesingle{}, or 
+
+L\+I\+S\+T\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+R\+A\+NK if \textquotesingle{}rank\textquotesingle{} is invalid, or 
+
+L\+I\+S\+T\+\_\+\+E\+M\+P\+TY if the list is empty, or 
+
+L\+I\+S\+T\+\_\+\+N\+U\+LL if \textquotesingle{}list\textquotesingle{} is N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{list_8h_a4f2a86680e5728fa28f96b70f5e54fad}\label{list_8h_a4f2a86680e5728fa28f96b70f5e54fad}} 
+\index{list.h@{list.h}!listSize@{listSize}}
+\index{listSize@{listSize}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{listSize()}{listSize()}}
+{\footnotesize\ttfamily int list\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a39f79d75aefe285077489fdab3a43d76}{Pt\+List}}}]{list,  }\item[{int $\ast$}]{pt\+Size }\end{DoxyParamCaption})}
+
+
+
+Retrieves the size of a list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & \mbox{[}in\mbox{]} pointer to the list \\
+\hline
+{\em pt\+Size} & \mbox{[}out\mbox{]} address of variable to hold the value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\+I\+S\+T\+\_\+\+OK if successful and value in \textquotesingle{}pt\+Size\textquotesingle{}, or 
+
+L\+I\+S\+T\+\_\+\+N\+U\+LL if \textquotesingle{}list\textquotesingle{} is N\+U\+LL 
+\end{DoxyReturn}

@@ -1,0 +1,351 @@
+\hypertarget{mapArrayList_8c}{}\doxysection{map\+Array\+List.\+c File Reference}
+\label{mapArrayList_8c}\index{mapArrayList.c@{mapArrayList.c}}
+
+
+Provides an implementation of the A\+DT Map with an array list as the underlying data structure.  
+
+
+{\ttfamily \#include \char`\"{}map.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for map\+Array\+List.\+c\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structkeyValue}{key\+Value}}
+\item 
+struct \mbox{\hyperlink{structmapImpl}{map\+Impl}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{mapArrayList_8c_ac76c8d0cd034703d4918235504c60b34}\label{mapArrayList_8c_ac76c8d0cd034703d4918235504c60b34}} 
+typedef struct \mbox{\hyperlink{structkeyValue}{key\+Value}} {\bfseries Key\+Value}
+\item 
+\mbox{\Hypertarget{mapArrayList_8c_ab7f926f81aba1263471b24d63c4ee609}\label{mapArrayList_8c_ab7f926f81aba1263471b24d63c4ee609}} 
+typedef struct \mbox{\hyperlink{structmapImpl}{map\+Impl}} {\bfseries Map\+Impl}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} \mbox{\hyperlink{mapArrayList_8c_ac680b440f7ffce339e145489f6ac6997}{map\+Create}} (unsigned int initial\+Capacity)
+\begin{DoxyCompactList}\small\item\em Creates a new empty map. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mapArrayList_8c_aaaeb3468c274d11c12efafb5430deae8}{map\+Destroy}} (\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} $\ast$pt\+Map)
+\begin{DoxyCompactList}\small\item\em Free all resources of a map. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mapArrayList_8c_ae6595795f197387ee199c19e65570128}{map\+Put}} (\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} map, \mbox{\hyperlink{mapElem_8h_aea61338cbade3e136ec9d58e7a7065cf}{Map\+Key}} key, \mbox{\hyperlink{mapElem_8h_a65b314563b7e6e68bc5f8833b43f1759}{Map\+Value}} value)
+\begin{DoxyCompactList}\small\item\em Add a key-\/value mapping to a map. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mapArrayList_8c_a0e4ef77020277e0e7eda45b0468e3460}{map\+Remove}} (\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} map, \mbox{\hyperlink{mapElem_8h_aea61338cbade3e136ec9d58e7a7065cf}{Map\+Key}} key, \mbox{\hyperlink{mapElem_8h_a65b314563b7e6e68bc5f8833b43f1759}{Map\+Value}} $\ast$pt\+Value)
+\begin{DoxyCompactList}\small\item\em Removes a mapping from a map. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{mapArrayList_8c_a944beeb53a4d0d4406bde56647c9c7e6}{map\+Contains}} (\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} map, \mbox{\hyperlink{mapElem_8h_aea61338cbade3e136ec9d58e7a7065cf}{Map\+Key}} key)
+\begin{DoxyCompactList}\small\item\em Checks whether a map contains a key. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mapArrayList_8c_a14b85157ba61e73a70952442becfcedd}{map\+Get}} (\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} map, \mbox{\hyperlink{mapElem_8h_aea61338cbade3e136ec9d58e7a7065cf}{Map\+Key}} key, \mbox{\hyperlink{mapElem_8h_a65b314563b7e6e68bc5f8833b43f1759}{Map\+Value}} $\ast$pt\+Value)
+\begin{DoxyCompactList}\small\item\em Retrieves ther value associated with a key from a map. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{mapElem_8h_aea61338cbade3e136ec9d58e7a7065cf}{Map\+Key}} $\ast$ \mbox{\hyperlink{mapArrayList_8c_a3c1e644581eff65849d2eb7d5b3586c8}{map\+Keys}} (\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} map)
+\begin{DoxyCompactList}\small\item\em Retrieves the set of keys of a map. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{mapElem_8h_a65b314563b7e6e68bc5f8833b43f1759}{Map\+Value}} $\ast$ \mbox{\hyperlink{mapArrayList_8c_a4e8263c4432822972df0f88c681bf60a}{map\+Values}} (\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} map)
+\begin{DoxyCompactList}\small\item\em Retrieves the set of values of a map. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mapArrayList_8c_a08746176dcacb4c280dcdc77ed372acc}{map\+Size}} (\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} map, int $\ast$pt\+Size)
+\begin{DoxyCompactList}\small\item\em Retrieves the size of a map. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{mapArrayList_8c_a9357c2ed711a12bb88e4c6823490b59d}{map\+Is\+Empty}} (\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} map)
+\begin{DoxyCompactList}\small\item\em Checks whether a map is empty. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mapArrayList_8c_a2d76a2b25454a45429e2e4c548720002}{map\+Clear}} (\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} map)
+\begin{DoxyCompactList}\small\item\em Clears the contents of a map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{mapArrayList_8c_a4d614953050c1791e73cb6266c4dbac7}{map\+Print}} (\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} map)
+\begin{DoxyCompactList}\small\item\em Prints the contents of a map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides an implementation of the A\+DT Map with an array list as the underlying data structure. 
+
+\begin{DoxyAuthor}{Author}
+Bruno Silva (\href{mailto:brunomnsilva@gmail.com}{\texttt{ brunomnsilva@gmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000007}{Bug}}]No known bugs. \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mapArrayList_8c_a2d76a2b25454a45429e2e4c548720002}\label{mapArrayList_8c_a2d76a2b25454a45429e2e4c548720002}} 
+\index{mapArrayList.c@{mapArrayList.c}!mapClear@{mapClear}}
+\index{mapClear@{mapClear}!mapArrayList.c@{mapArrayList.c}}
+\doxysubsubsection{\texorpdfstring{mapClear()}{mapClear()}}
+{\footnotesize\ttfamily int map\+Clear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}}}]{map }\end{DoxyParamCaption})}
+
+
+
+Clears the contents of a map. 
+
+This operation will remove all current valueents in the map, returning to an empty state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & \mbox{[}in\mbox{]} pointer to the map\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+M\+A\+P\+\_\+\+OK if successful, or 
+
+M\+A\+P\+\_\+\+N\+U\+LL if \textquotesingle{}map\textquotesingle{} is N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mapArrayList_8c_a944beeb53a4d0d4406bde56647c9c7e6}\label{mapArrayList_8c_a944beeb53a4d0d4406bde56647c9c7e6}} 
+\index{mapArrayList.c@{mapArrayList.c}!mapContains@{mapContains}}
+\index{mapContains@{mapContains}!mapArrayList.c@{mapArrayList.c}}
+\doxysubsubsection{\texorpdfstring{mapContains()}{mapContains()}}
+{\footnotesize\ttfamily bool map\+Contains (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}}}]{map,  }\item[{\mbox{\hyperlink{mapElem_8h_aea61338cbade3e136ec9d58e7a7065cf}{Map\+Key}}}]{key }\end{DoxyParamCaption})}
+
+
+
+Checks whether a map contains a key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & \mbox{[}in\mbox{]} pointer to the map \\
+\hline
+{\em key} & \mbox{[}in\mbox{]} key to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\textquotesingle{}true\textquotesingle{} if \textquotesingle{}key\textquotesingle{} exists, or 
+
+\textquotesingle{}false\textquotesingle{} if \textquotesingle{}key\textquotesingle{} doesn\textquotesingle{}t exist or \textquotesingle{}map\textquotesingle{} is N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mapArrayList_8c_ac680b440f7ffce339e145489f6ac6997}\label{mapArrayList_8c_ac680b440f7ffce339e145489f6ac6997}} 
+\index{mapArrayList.c@{mapArrayList.c}!mapCreate@{mapCreate}}
+\index{mapCreate@{mapCreate}!mapArrayList.c@{mapArrayList.c}}
+\doxysubsubsection{\texorpdfstring{mapCreate()}{mapCreate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} map\+Create (\begin{DoxyParamCaption}\item[{unsigned int}]{initial\+Capacity }\end{DoxyParamCaption})}
+
+
+
+Creates a new empty map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em initial\+Capacity} & \mbox{[}in\mbox{]} The desired initial capacity (?)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pt\+Map pointer to allocated data structure, or 
+
+N\+U\+LL if unsufficient memory for allocation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mapArrayList_8c_aaaeb3468c274d11c12efafb5430deae8}\label{mapArrayList_8c_aaaeb3468c274d11c12efafb5430deae8}} 
+\index{mapArrayList.c@{mapArrayList.c}!mapDestroy@{mapDestroy}}
+\index{mapDestroy@{mapDestroy}!mapArrayList.c@{mapArrayList.c}}
+\doxysubsubsection{\texorpdfstring{mapDestroy()}{mapDestroy()}}
+{\footnotesize\ttfamily int map\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}} $\ast$}]{pt\+Map }\end{DoxyParamCaption})}
+
+
+
+Free all resources of a map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt\+Map} & \mbox{[}in\mbox{]} A\+D\+D\+R\+E\+SS OF pointer to the map\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+M\+A\+P\+\_\+\+OK if success, or 
+
+M\+A\+P\+\_\+\+N\+U\+LL if \textquotesingle{}$\ast$pt\+Map\textquotesingle{} is N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mapArrayList_8c_a14b85157ba61e73a70952442becfcedd}\label{mapArrayList_8c_a14b85157ba61e73a70952442becfcedd}} 
+\index{mapArrayList.c@{mapArrayList.c}!mapGet@{mapGet}}
+\index{mapGet@{mapGet}!mapArrayList.c@{mapArrayList.c}}
+\doxysubsubsection{\texorpdfstring{mapGet()}{mapGet()}}
+{\footnotesize\ttfamily int map\+Get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}}}]{map,  }\item[{\mbox{\hyperlink{mapElem_8h_aea61338cbade3e136ec9d58e7a7065cf}{Map\+Key}}}]{key,  }\item[{\mbox{\hyperlink{mapElem_8h_a65b314563b7e6e68bc5f8833b43f1759}{Map\+Value}} $\ast$}]{pt\+Value }\end{DoxyParamCaption})}
+
+
+
+Retrieves ther value associated with a key from a map. 
+
+The specified key must exist.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & \mbox{[}in\mbox{]} pointer to the map \\
+\hline
+{\em key} & \mbox{[}in\mbox{]} key for retrieval \\
+\hline
+{\em pt\+Value} & \mbox{[}out\mbox{]} address of variable to hold the value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+M\+A\+P\+\_\+\+OK if successful and value in \textquotesingle{}pt\+Value\textquotesingle{}, or 
+
+M\+A\+P\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+K\+EY if \textquotesingle{}key\textquotesingle{} doesn\textquotesingle{}t exist, or 
+
+M\+A\+P\+\_\+\+E\+M\+P\+TY if the map is empty, or 
+
+M\+A\+P\+\_\+\+N\+U\+LL if \textquotesingle{}map\textquotesingle{} is N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mapArrayList_8c_a9357c2ed711a12bb88e4c6823490b59d}\label{mapArrayList_8c_a9357c2ed711a12bb88e4c6823490b59d}} 
+\index{mapArrayList.c@{mapArrayList.c}!mapIsEmpty@{mapIsEmpty}}
+\index{mapIsEmpty@{mapIsEmpty}!mapArrayList.c@{mapArrayList.c}}
+\doxysubsubsection{\texorpdfstring{mapIsEmpty()}{mapIsEmpty()}}
+{\footnotesize\ttfamily bool map\+Is\+Empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}}}]{map }\end{DoxyParamCaption})}
+
+
+
+Checks whether a map is empty. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & \mbox{[}in\mbox{]} pointer to the map\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\textquotesingle{}true\textquotesingle{} if empty or if \textquotesingle{}map\textquotesingle{} is N\+U\+LL, or 
+
+\textquotesingle{}false\textquotesingle{} it not empty 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mapArrayList_8c_a3c1e644581eff65849d2eb7d5b3586c8}\label{mapArrayList_8c_a3c1e644581eff65849d2eb7d5b3586c8}} 
+\index{mapArrayList.c@{mapArrayList.c}!mapKeys@{mapKeys}}
+\index{mapKeys@{mapKeys}!mapArrayList.c@{mapArrayList.c}}
+\doxysubsubsection{\texorpdfstring{mapKeys()}{mapKeys()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{mapElem_8h_aea61338cbade3e136ec9d58e7a7065cf}{Map\+Key}}$\ast$ map\+Keys (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}}}]{map }\end{DoxyParamCaption})}
+
+
+
+Retrieves the set of keys of a map. 
+
+This function returns a dynamically allocated array with length equal to the size of the map, containing the keys of the map in no particular order.
+
+The caller is responsible for deallocating (freeing) the array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & \mbox{[}in\mbox{]} pointer to the map\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array containing the keys 
+
+N\+U\+LL if \textquotesingle{}map\textquotesingle{} is empty or N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mapArrayList_8c_a4d614953050c1791e73cb6266c4dbac7}\label{mapArrayList_8c_a4d614953050c1791e73cb6266c4dbac7}} 
+\index{mapArrayList.c@{mapArrayList.c}!mapPrint@{mapPrint}}
+\index{mapPrint@{mapPrint}!mapArrayList.c@{mapArrayList.c}}
+\doxysubsubsection{\texorpdfstring{mapPrint()}{mapPrint()}}
+{\footnotesize\ttfamily void map\+Print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}}}]{map }\end{DoxyParamCaption})}
+
+
+
+Prints the contents of a map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & \mbox{[}in\mbox{]} pointer to the map \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{mapArrayList_8c_ae6595795f197387ee199c19e65570128}\label{mapArrayList_8c_ae6595795f197387ee199c19e65570128}} 
+\index{mapArrayList.c@{mapArrayList.c}!mapPut@{mapPut}}
+\index{mapPut@{mapPut}!mapArrayList.c@{mapArrayList.c}}
+\doxysubsubsection{\texorpdfstring{mapPut()}{mapPut()}}
+{\footnotesize\ttfamily int map\+Put (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}}}]{map,  }\item[{\mbox{\hyperlink{mapElem_8h_aea61338cbade3e136ec9d58e7a7065cf}{Map\+Key}}}]{key,  }\item[{\mbox{\hyperlink{mapElem_8h_a65b314563b7e6e68bc5f8833b43f1759}{Map\+Value}}}]{value }\end{DoxyParamCaption})}
+
+
+
+Add a key-\/value mapping to a map. 
+
+If \textquotesingle{}key\textquotesingle{} already exists, the currently mapped value is silently replaced by \textquotesingle{}value\textquotesingle{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & \mbox{[}in\mbox{]} pointer to the map \\
+\hline
+{\em key} & \mbox{[}in\mbox{]} key \\
+\hline
+{\em value} & \mbox{[}in\mbox{]} value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+M\+A\+P\+\_\+\+OK if successful, or 
+
+M\+A\+P\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+K\+EY if \textquotesingle{}key\textquotesingle{} doesn\textquotesingle{}t exist, or 
+
+M\+A\+P\+\_\+\+F\+U\+LL if no capacity available, or 
+
+M\+A\+P\+\_\+\+N\+O\+\_\+\+M\+E\+M\+O\+RY if unsufficient memory for allocation, or 
+
+M\+A\+P\+\_\+\+N\+U\+LL if \textquotesingle{}map\textquotesingle{} is N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mapArrayList_8c_a0e4ef77020277e0e7eda45b0468e3460}\label{mapArrayList_8c_a0e4ef77020277e0e7eda45b0468e3460}} 
+\index{mapArrayList.c@{mapArrayList.c}!mapRemove@{mapRemove}}
+\index{mapRemove@{mapRemove}!mapArrayList.c@{mapArrayList.c}}
+\doxysubsubsection{\texorpdfstring{mapRemove()}{mapRemove()}}
+{\footnotesize\ttfamily int map\+Remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}}}]{map,  }\item[{\mbox{\hyperlink{mapElem_8h_aea61338cbade3e136ec9d58e7a7065cf}{Map\+Key}}}]{key,  }\item[{\mbox{\hyperlink{mapElem_8h_a65b314563b7e6e68bc5f8833b43f1759}{Map\+Value}} $\ast$}]{pt\+Value }\end{DoxyParamCaption})}
+
+
+
+Removes a mapping from a map. 
+
+The function returns the value associated with \textquotesingle{}key\textquotesingle{} and removes \textquotesingle{}key\textquotesingle{} from the map if the operation is successful.
+
+The specified key must exist.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & \mbox{[}in\mbox{]} pointer to the map \\
+\hline
+{\em key} & \mbox{[}in\mbox{]} key for removal \\
+\hline
+{\em pt\+Value} & \mbox{[}out\mbox{]} address of variable to hold the value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+M\+A\+P\+\_\+\+OK if successful and value in \textquotesingle{}pt\+Value\textquotesingle{}, or 
+
+M\+A\+P\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+K\+EY if \textquotesingle{}key\textquotesingle{} doesn\textquotesingle{}t exist, or 
+
+M\+A\+P\+\_\+\+E\+M\+P\+TY if the map is empty, or 
+
+M\+A\+P\+\_\+\+N\+U\+LL if \textquotesingle{}map\textquotesingle{} is N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mapArrayList_8c_a08746176dcacb4c280dcdc77ed372acc}\label{mapArrayList_8c_a08746176dcacb4c280dcdc77ed372acc}} 
+\index{mapArrayList.c@{mapArrayList.c}!mapSize@{mapSize}}
+\index{mapSize@{mapSize}!mapArrayList.c@{mapArrayList.c}}
+\doxysubsubsection{\texorpdfstring{mapSize()}{mapSize()}}
+{\footnotesize\ttfamily int map\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}}}]{map,  }\item[{int $\ast$}]{pt\+Size }\end{DoxyParamCaption})}
+
+
+
+Retrieves the size of a map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & \mbox{[}in\mbox{]} pointer to the map \\
+\hline
+{\em pt\+Size} & \mbox{[}out\mbox{]} address of variable to hold the value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+M\+A\+P\+\_\+\+OK if successful and value in \textquotesingle{}pt\+Size\textquotesingle{}, or 
+
+M\+A\+P\+\_\+\+N\+U\+LL if \textquotesingle{}map\textquotesingle{} is N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mapArrayList_8c_a4e8263c4432822972df0f88c681bf60a}\label{mapArrayList_8c_a4e8263c4432822972df0f88c681bf60a}} 
+\index{mapArrayList.c@{mapArrayList.c}!mapValues@{mapValues}}
+\index{mapValues@{mapValues}!mapArrayList.c@{mapArrayList.c}}
+\doxysubsubsection{\texorpdfstring{mapValues()}{mapValues()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{mapElem_8h_a65b314563b7e6e68bc5f8833b43f1759}{Map\+Value}}$\ast$ map\+Values (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{map_8h_a412c6f1fedbc15a8ed94c923555b8918}{Pt\+Map}}}]{map }\end{DoxyParamCaption})}
+
+
+
+Retrieves the set of values of a map. 
+
+This function returns a dynamically allocated array with length equal to the size of the map, containing the values of the map in no particular order.
+
+The caller is responsible for deallocating (freeing) the array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & \mbox{[}in\mbox{]} pointer to the map\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array containing the values 
+
+N\+U\+LL if \textquotesingle{}map\textquotesingle{} is empty or N\+U\+LL 
+\end{DoxyReturn}

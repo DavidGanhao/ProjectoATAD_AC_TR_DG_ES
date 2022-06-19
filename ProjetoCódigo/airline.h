@@ -1,3 +1,13 @@
+/**
+ * @file airline.h
+ * @brief Definition of the airline in C.
+ * 
+ * Defines the type airline and associated operations.
+ * 
+ * @author David Ganhão, Tomás Ramos e André Caetano.
+ * @bug No known bugs.
+ */
+
 #pragma once
 #include <stdbool.h>
 
