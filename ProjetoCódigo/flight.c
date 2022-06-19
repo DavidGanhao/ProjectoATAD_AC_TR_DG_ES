@@ -64,3 +64,31 @@ Time convertCharTokenToTime(char* time){
     timeToReturn.min = minutes;
     return timeToReturn;
 }
+
+void timeInfoFlightArrival(Flight* flights, int start, int number){
+    printf("%5s %12s %9s %12s %7s %12s %22s %16s %16s    %8s %22s %16s   %12s\n",
+    "Day", "Day of Week", "Airline", "Flight Number", "Origin", "Destination", "Schedule Departure",
+    "Departure Time", "Schedule Time", "Distance", "Scheduled Arrival", "Arrival Time", "Arrival Delay");
+    for(int i = start; i < number; i++){
+        printf("   %-2d  ", flights[i].day);
+        printf("  %-10s ", dayOfWeek(flights[i].dayOfWeek));
+        printf("    %-2s   ", flights[i].airline);
+        printf("   %-6d   ", flights[i].flightNumber);
+        printf("    %3s  ", flights[i].originAirport);
+        printf("     %3s   ", flights[i].destinationAirport);
+        printf("             %02d:%02d         ", flights[i].scheduledDeparture.hour, flights[i].scheduledDeparture.min);
+        printf("      %02d:%02d      ", flights[i].departureTime.hour, flights[i].departureTime.min);
+        printf("        %-4d      ", flights[i].scheduledTravelTime);
+        printf("   %-5d ", flights[i].distance);
+        printf("           %02d:%02d         ", flights[i].scheduledArrival.hour, flights[i].scheduledArrival.min);
+        printf("      %02d:%02d      ", flights[i].arrivalTime.hour, flights[i].arrivalTime.min);
+        printf("    %-6d   \n", flights[i].arrivalDelay);
+    }
+    
+}
+
+void swapFlight(Flight* flight1, Flight* flight2){
+    Flight temp = *flight1;
+    *flight1 = *flight2;
+    *flight2 = temp;
+}
