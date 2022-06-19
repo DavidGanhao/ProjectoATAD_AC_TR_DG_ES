@@ -1,13 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "utils.h"
-#include "input.h"
 #include <locale.h>
 #include <time.h>
 #include "projectMethods.h"
 #include "input.h"
-#include "stringCode.h"
+#include "utils.h"
 
 void printCommandsMenu();
 void commandsMenuDecision(Airline *airlines, PtMap airports, PtList flights);
@@ -20,10 +18,12 @@ void waitFunction();
 
 int main()
 {
+	
 	srand(time(NULL));
 	Airline *airlines = (Airline *)malloc(sizeof(Airline) * 20);
 	PtMap airports = mapCreate(20);
 	PtList flights = listCreate();
+	
 	commandsMenuDecision(airlines, airports, flights);
 }
 
@@ -77,7 +77,7 @@ void flightsMenuDecision(Airline *airlines, PtMap airports, PtList flights)
 		char airport[4];
 		printf("What is the airport?\n> ");
 		scanf("%s", airport);
-		showWF(flights, "LAS");
+		showWF(flights, airport);
 	}
 	else if (equalsStringIgnoreCase(command, "C") || equalsStringIgnoreCase(command, "LISTAR"))
 	{
@@ -89,15 +89,18 @@ void flightsMenuDecision(Airline *airlines, PtMap airports, PtList flights)
 	}
 	else if (equalsStringIgnoreCase(command, "E") || equalsStringIgnoreCase(command, "ONTIME"))
 	{
-		// FALTA
+		onTime(flights, airlines);
 	}
 	else if (equalsStringIgnoreCase(command, "F") || equalsStringIgnoreCase(command, "AVERAGE"))
 	{
-		// FALTA
+		char airportIataCode[4];
+		printf("What is the airport to calculate the average?\n> ");
+		scanf("%s", airportIataCode);
+		average(flights, airportIataCode);
 	}
 	else if (equalsStringIgnoreCase(command, "G") || equalsStringIgnoreCase(command, "SHOWAP"))
 	{
-		// FALTA
+		showAP(flights, airlines, airports);
 	}
 	else if (equalsStringIgnoreCase(command, "H") || equalsStringIgnoreCase(command, "TOPN"))
 	{
@@ -108,6 +111,7 @@ void flightsMenuDecision(Airline *airlines, PtMap airports, PtList flights)
 	}
 	else if (equalsStringIgnoreCase(command, "I") || equalsStringIgnoreCase(command, "TSP"))
 	{
+		tspMenu(flights, airports);
 	}
 	else
 	{

@@ -11,58 +11,59 @@ typedef struct airport {
     int timeZone;
 } Airport;
 
-/**
- * @brief Function used to print the info of an airport.
- * @param airport - Airport variable referencing an airport.
- **/
-void printAirport(Airport airport);
 
 /**
  * @brief Function used to create an airport
  * 
- * @param iatacode - array of chars referencing the code of the airport.
- * @param airport - array of chars referencing the airport.
- * @param city - array of chars referencing the city in which the airport is located.
- * @param state - array of chars referencing the state in which the airport is located.
- * @param latitude - float variable referencing the latitude of the airport.
- * @param longitude - float variable referencing the longitude of the airport.
- * @param timeZone - integer variable referencing the timeZone of the airport.
- **/
+ * @param airport - Airport to show
+ */
+void printAirport(Airport airport);
+
+/**
+ * @brief Constructor of an Airport
+ * 
+ * @param iatacode - code of an Airport
+ * @param airport - name of an Airport
+ * @param city - city of an Airport
+ * @param state - state of an Airport
+ * @param latitude - latitude of an Airport
+ * @param longitude - longitude of an Airport
+ * @param timeZone - timeZone of an Airport
+ * @return Airport - Airport created
+ */
 Airport createAirport(char* iatacode, char* airport, char* city, char* state, float latitude, float longitude, int timeZone);
 
 /**
- * @brief Function used to print only a few piece of information about an airport. (used in function listAP).
+ * @brief Function used to print the info of an airport.
  * 
  * @param airport - Airport variable referencing an airport.
- * @return airport created
- **/
+ */
 void printAirportForListAP(Airport airport);
 
 /**
- * @brief Function used to print the airports info.
+ * @brief Function that shows the informcation of an Airport array
  * 
  * @param airports - array of airports.
  * @param start - integer variable referecing to the starting index.
  * @param end - integer variable referencing to the end index.
- * 
- **/
+ */
 void printAirportsInfo(Airport* airports, int start, int end);
 
 /**
- * @brief Function used to to show agregated information about an airport.
+ * @brief Function that shows the information in aggregate form of an Airport
  * 
  * @param airport - Airport variable referencing to an airport.
  * @param numFlights - Integer variable referencing to the number of flights.
  * @param numDepDelays - Integer variable referencing to the number of departures with delay.
  * @param avgDepDelays - Float variable referencing to the average of the departures with delay.
- * 
- **/
+ */
 void printAirportInfoAgregated(Airport airport, int numFlights, int numDepDelays, float avgDepDelays);
 
 /**
- * @brief Function used to swap airports.
+ * @brief Function that swaps to Airports
  * 
- * @param x - airport to be swaped.
- * @param y - airport to be swaped.
- **/
+ * @param x - first Airport to swap
+ * @param y - second Airport to swap.
+ * @param y - second Airport to swap
+ */
 void swapAirport(Airport* x, Airport* y);

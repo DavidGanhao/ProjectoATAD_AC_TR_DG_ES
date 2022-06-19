@@ -34,8 +34,7 @@ typedef struct flight {
  * @param arrivalTime - time variable referencing the arrival time.
  * 
  * @return flight
- * 
- **/ 
+ */ 
 Flight createFlight(int day, int dayOfWeek, char* airline, int flightNumber, char* originAirport, char* destinationAirport, Time scheduledDeparture, Time departureTime, int distance, Time scheduleArrival,  Time arrivalTime, int scheduledTravelTime);
 
 /**
@@ -47,9 +46,9 @@ void printFlight(Flight flight);
 
 /**
  * @brief Function used
- * @param flights -
- * @param start - integer referencing
- * @param number - 
+ * @param flights - Flights to be printed
+ * @param start - integer referencing the start of the array
+ * @param number - integer referencing the end of the array
  **/
 void timeInfoFlightArrival(Flight* flights, int start, int number);
 
@@ -60,8 +59,8 @@ void timeInfoFlightArrival(Flight* flights, int start, int number);
 char* dayOfWeek(int dayOfWeek);
 
 /**
- * @brief 
- * @param time - 
+ * @brief Converts a string to a value of Time
+ * @param time - String to be converted
  * 
  **/
 Time convertCharTokenToTime(char* time);
