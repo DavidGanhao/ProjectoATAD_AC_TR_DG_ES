@@ -126,7 +126,7 @@ void clear(Airline *airlines, PtMap airports, PtList flights)
     int airlineSize = 0;
     for (int i = 0; true; i++)
     {
-        if (strlen(airlines[i].code) == 0 || strlen(airlines[i].name) == 0)
+        if (strlen(airlines[i].iatacode) == 0 || strlen(airlines[i].name) == 0)
         {
             airlineSize = i;
             break;
@@ -232,12 +232,12 @@ void ontimeMenu(PtList flights, Airline* airlines)
             for(int j = 0; j < flightSize; j++){
             ListElem flight;
             listGet(flights, j, &flight);
-            if(strcmp(airlines[i].code, flight.airline) == 0){
+            if(strcmp(airlines[i].iatacode, flight.airline) == 0){
                 int size; listSize(aux,&size);
                 listAdd(aux, size, flight);
             }
             }
-            printf(" %s\t\t", airlines[i].code);
+            printf(" %s\t\t", airlines[i].iatacode);
             printf(" %4d\t\t", ontimeDeparture(aux, choice));
             printf(" %4d\t\t\n", onTimeArrival(aux, choice));
             listClear(aux);   
@@ -392,7 +392,7 @@ void listAR(PtList flights, Airline *airlines)
         {
             ListElem flight;
             listGet(flights, j, &flight);
-            if (strcmp(airlines[i].code, flight.airline) == 0)
+            if (strcmp(airlines[i].iatacode, flight.airline) == 0)
             {
                 printf("Airline: %s\n", airlines[i].name);
                 break;
@@ -435,11 +435,11 @@ void showAP(PtList flights, Airline* airlines, PtMap airports)
 {
     if(airports == NULL) return;
     if(mapIsEmpty(airports)) return;
-    PtMap auxMap = mapCreate(0);
-    PtList auxFlights = listCreate();
     if(flights == NULL) return;
     if(listIsEmpty(flights)) return;
     if(airlines == NULL) return;
+    PtMap auxMap = mapCreate(0);
+    PtList auxFlights = listCreate();
     int count = 0;
     int flightSize;
     listSize(flights, &flightSize);
@@ -447,28 +447,33 @@ void showAP(PtList flights, Airline* airlines, PtMap airports)
         for(int j = 0; j < flightSize; j++){
             ListElem flight;
             listGet(flights, j, &flight);
-            if(strcmp(airlines[i].code, flight.airline) == 0){
+
+            if(strcmp(airlines[i].iatacode, flight.airline) == 0){
                 int size; mapSize(auxMap,&size);
-                listAdd(auxMap, size, flight);
+                listAdd(auxFlights, size, flight);
         }
         for(int t = 0; t < auxFlights; t++){
             ListElem flight;
-            listGet(auxMap, t, &flight);
+            listGet(auxFlights, t, &flight);
             MapValue value;
             mapGet(airports, stringCodeCreate(flight.originAirport) , &value);
             mapPut(auxMap, stringCodeCreate(flight.originAirport), value);
             mapGet(airports, stringCodeCreate(flight.destinationAirport), &value);
             mapPut(auxMap, stringCodeCreate(flight.destinationAirport), value);   
         }
-        mapSize(airports, &count);
-         printf(" %s passes through %d airports.\n", airlines->name, count);
+        mapSize(auxMap, &count);
+        printf(" %s passes through %d airports.\n", airlines->name, count);
         MapKey* mapKeysAux = mapKeys(auxMap);
         for(int k = 0; k<count; k++){
             printf(" %s\n",mapKeysAux[k]);
         }
         printf("\n");
         }
+        listClear(auxFlights);
+        mapClear(auxMap);
     }
+    listDestroy(&auxFlights);
+    mapDestroy(&auxMap);
 }
 
 void airport_s(PtMap airports)
@@ -671,7 +676,7 @@ void airportsMethod(PtMap airports, PtList flights)
     {
         MapValue airport;
         mapGet(mapWithAirports, keys[i], &airport);
-        PtList list = flightsAssociatedToAirport(airport, flights);
+        PtList list = flightsAssociatedToAirport(airport, flights); 
         listSize(list, &flightsSize);
         for (int j = 0; j < flightsSize; j++)
         {
