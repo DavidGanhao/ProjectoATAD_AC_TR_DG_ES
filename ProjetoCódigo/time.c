@@ -32,3 +32,4 @@ int timeDiffSpecial(Time time1,Time time2) {
         aux = ( time2.hour - (time1.hour+24)) * 60 + (time2.min - time1.min);
     return aux;
 }
+

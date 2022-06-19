@@ -6,3 +6,4 @@ typedef struct time {
 
 int timeDiff(Time time1,Time time2);
 int timeDiffSpecial(Time time1,Time time2);
+
