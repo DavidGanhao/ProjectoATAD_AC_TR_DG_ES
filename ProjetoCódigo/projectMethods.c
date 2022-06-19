@@ -102,7 +102,7 @@ int loadf(PtMap airports, PtList flights, int howMany){
 void clear(Airline* airlines, PtMap airports, PtList flights){
     int airlineSize = 0;
     for(int i = 0; true; i++){
-        if(strlen(airlines[i].iatacode) == 0 || strlen(airlines[i].name) == 0){
+        if(strlen(airlines[i].code) == 0 || strlen(airlines[i].name) == 0){
             airlineSize = i;
             break;
         }
@@ -150,7 +150,7 @@ void listAR(PtList flights, Airline* airlines){
         for(int j = 0; j < flightSize; j++){
             ListElem flight;
             listGet(flights, j, &flight);
-            if(strcmp(airlines[i].iatacode, flight.airline) == 0){
+            if(strcmp(airlines[i].code, flight.airline) == 0){
                 printAirline(airlines[i]);
                 break;
             }
@@ -352,7 +352,7 @@ void listAR(PtList flights, Airline *airlines)
         {
             ListElem flight;
             listGet(flights, j, &flight);
-            if (strcmp(airlines[i].iatacode, flight.airline) == 0)
+            if (strcmp(airlines[i].code, flight.airline) == 0)
             {
                 printf("Airline: %s\n", airlines[i].name);
                 break;
