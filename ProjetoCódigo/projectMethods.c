@@ -449,7 +449,7 @@ void showAP(PtList flights, Airline* airlines, PtMap airports)
             listGet(flights, j, &flight);
             if(strcmp(airlines[i].iatacode, flight.airline) == 0){
                 int size; mapSize(auxMap,&size);
-                listAdd(auxMap, size, flight);
+                listAdd(auxFlights, size, flight);
             }
         }
         listSize(auxFlights, &flightSize);
@@ -469,7 +469,11 @@ void showAP(PtList flights, Airline* airlines, PtMap airports)
             printf(" %s\n",mapKeysAux[k]);
         }
         printf("\n");
+        listClear(auxFlights);
+        mapClear(auxMap);
     }
+    listDestroy(&auxFlights);
+    mapDestroy(&auxMap);
 }
 
 void airport_s(PtMap airports)
