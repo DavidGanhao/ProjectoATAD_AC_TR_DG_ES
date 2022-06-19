@@ -62,6 +62,6 @@ void printAirportInfoAgregated(Airport airport, int numFlights, int numDepDelays
  * @brief Function that swaps to Airports
  * 
  * @param x - first Airport to swap
- * @param y - second Airport to swap
+ * @param y - second Airport to swap.
  */
 void swapAirport(Airport* x, Airport* y);
