@@ -9,7 +9,7 @@
 #include "input.h"
 
 
-int equalsStringIgnoreCase(char str1[], char str2[]) {
+bool equalsStringIgnoreCase(char str1[], char str2[]) {
 	/* Apenas faz uma comparacao utilizando o strcmp.
 	* Necessita de tansformar primeiro as strings em maiusculas */
 	char str1Up[256], str2Up[256];

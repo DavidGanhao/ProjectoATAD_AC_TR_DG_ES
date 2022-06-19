@@ -1,4 +1,5 @@
 #pragma once
+#include <stdbool.h>
 
 typedef struct airline {
     char iatacode[3];
