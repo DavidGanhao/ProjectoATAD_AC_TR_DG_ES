@@ -209,7 +209,7 @@ int travelTimeFromAirportToAirport(PtList flights, char *airportOrigin, char *ai
 {
 }
 
-void ontimeMenu(PtList flights, Airline* airlines)
+void ontimeMenu(PtList flights, Airline *airlines)
 {
     PtList aux = listCreate();
     bool condition = true;
@@ -217,31 +217,36 @@ void ontimeMenu(PtList flights, Airline* airlines)
     int flightSize;
     int airlineSize = AIRLINESIZE;
     listSize(flights, &flightSize);
-    while(condition)
+    while (condition)
     {
         printf("\n\nONTIME MENU\n");
         printf("Insert a tolerance (between 0 and 30 minutes): ");
-        if(choice > 30){
+        if (choice > 30)
+        {
             printf("Tolerance out of bounds!");
             return;
         }
         readInteger(&choice);
         printf("\n");
         printf("Airline\t\tOT_Departures\t\tOT_Arrivals\n");
-        for(int i = 0; i < airlineSize; i++){
-            for(int j = 0; j < flightSize; j++){
-            ListElem flight;
-            listGet(flights, j, &flight);
-            if(strcmp(airlines[i].iatacode, flight.airline) == 0){
-                int size; listSize(aux,&size);
-                listAdd(aux, size, flight);
-            }
+        for (int i = 0; i < airlineSize; i++)
+        {
+            for (int j = 0; j < flightSize; j++)
+            {
+                ListElem flight;
+                listGet(flights, j, &flight);
+                if (strcmp(airlines[i].iatacode, flight.airline) == 0)
+                {
+                    int size;
+                    listSize(aux, &size);
+                    listAdd(aux, size, flight);
+                }
             }
             printf(" %s\t\t", airlines[i].iatacode);
             printf(" %4d\t\t", ontimeDeparture(aux, choice));
             printf(" %4d\t\t\n", onTimeArrival(aux, choice));
-            listClear(aux);   
-        }  
+            listClear(aux);
+        }
     }
     listDestroy(aux);
 }
@@ -431,42 +436,53 @@ void listAP(PtList flights, PtMap airports)
     }
 }
 
-void showAP(PtList flights, Airline* airlines, PtMap airports)
+void showAP(PtList flights, Airline *airlines, PtMap airports)
 {
-    if(airports == NULL) return;
-    if(mapIsEmpty(airports)) return;
+    if (airports == NULL)
+        return;
+    if (mapIsEmpty(airports))
+        return;
     PtMap auxMap = mapCreate(0);
     PtList auxFlights = listCreate();
-    if(flights == NULL) return;
-    if(listIsEmpty(flights)) return;
-    if(airlines == NULL) return;
+    if (flights == NULL)
+        return;
+    if (listIsEmpty(flights))
+        return;
+    if (airlines == NULL)
+        return;
     int count = 0;
     int flightSize;
     listSize(flights, &flightSize);
-    for(int i = 0; i < AIRLINESIZE; i++){
-        for(int j = 0; j < flightSize; j++){
+    for (int i = 0; i < AIRLINESIZE; i++)
+    {
+        for (int j = 0; j < flightSize; j++)
+        {
             ListElem flight;
             listGet(flights, j, &flight);
-            if(strcmp(airlines[i].iatacode, flight.airline) == 0){
-                int size; mapSize(auxMap,&size);
+            if (strcmp(airlines[i].iatacode, flight.airline) == 0)
+            {
+                int size;
+                mapSize(auxMap, &size);
                 listAdd(auxFlights, size, flight);
             }
         }
         listSize(auxFlights, &flightSize);
-        for(int t = 0; t < flightSize; t++){
+        for (int t = 0; t < flightSize; t++)
+        {
             ListElem flight;
             listGet(auxFlights, t, &flight);
             MapValue value;
-            mapGet(airports, stringCodeCreate(flight.originAirport) , &value);
+            mapGet(airports, stringCodeCreate(flight.originAirport), &value);
             mapPut(auxMap, stringCodeCreate(flight.originAirport), value);
             mapGet(airports, stringCodeCreate(flight.destinationAirport), &value);
-            mapPut(auxMap, stringCodeCreate(flight.destinationAirport), value);  
+            mapPut(auxMap, stringCodeCreate(flight.destinationAirport), value);
         }
         mapSize(airports, &count);
         printf(" %s passes through %d airports.\n", airlines->name, count);
-        MapKey* mapKeysAux = mapKeys(auxMap);
-        for(int k = 0; k<count; k++){
-            printf(" %s\n",mapKeysAux[k]);
+        MapKey *mapKeysAux = mapKeys(auxMap);
+        for (int k = 0; k < count; k++)
+        {
+            printf(" %s\n", mapKeysAux[k]);
         }
         printf("\n");
         listClear(auxFlights);
@@ -600,8 +616,62 @@ void *airportsOrderedLatitude(PtMap airports, int size, Airport *airportsTemp)
     }
 }
 
-void average(PtList flights, Airport airport){
-    int i, j;
+void average(PtList flights, char* airportIataCode)
+{
+    PtList aux = listCreate();
+    double everyday, weekDay, weekend;
+    int size, sizeAux, countEveryDay, countWeekDay, countWeekend = 0;
+    listSize(flights, &size);
+    printf(" Airport\t\tAll Days\t\tOnly Week Days\t\tWeekend");
+    for(int i = 0; i<size;i++){
+        ListElem flight; listGet(flights,i,&flight);
+
+        if(strcmp(flight.originAirport, airportIataCode) == 0){
+            listAdd(aux,sizeAux,flight); 
+            sizeAux++;
+        }
+
+        everyday += flight.distance; 
+        countEveryDay++;
+
+        if(flight.dayOfWeek >= 1 && flight.dayOfWeek<=5){
+             weekDay += flight.distance;
+             countWeekDay++;
+        }
+        else if(flight.dayOfWeek == 6 || flight.dayOfWeek == 7){
+            weekend += flight.distance;
+            countWeekDay++;
+        } 
+    }
+    everyday = everyday / countEveryDay;
+    weekDay = weekDay / countWeekDay;
+    weekend = weekend / countWeekend;
+
+    printf(" *\t\t %7.2f\t\t%7.2f\t\t%7.2f\n",everyday,weekDay,weekend);
+    everyday = 0; weekDay = 0; weekend = 0;
+    countEveryDay = 0; countWeekDay = 0; countWeekend = 0;
+
+    for(int i = 0; i<sizeAux;i++){
+        ListElem flight; listGet(aux,sizeAux,&flight);
+
+        everyday += flight.distance; 
+        countEveryDay++;
+
+        if(flight.dayOfWeek >= 1 && flight.dayOfWeek<=5){
+             weekDay += flight.distance;
+             countWeekDay++;
+        }
+        else if(flight.dayOfWeek == 6 || flight.dayOfWeek == 7){
+            weekend += flight.distance;
+            countWeekDay++;
+        } 
+    }
+    everyday = everyday / countEveryDay;
+    weekDay = weekDay / countWeekDay;
+    weekend = weekend / countWeekend;
+
+    printf(" %s\t\t %7.2f\t\t%7.2f\t\t%7.2f\n",airportIataCode,everyday,weekDay,weekend);
+    listDestroy(aux);
 }
 
 void airportsMethod(PtMap airports, PtList flights)
@@ -691,44 +761,54 @@ PtList flightsAssociatedToAirport(Airport airport, PtList flights)
     return list;
 }
 
-int ontimeDeparture(PtList flights, int number){
-    if(flights == NULL) return;
-    if(listIsEmpty(flights)) return;
-    if(number < 0 || number > 30){
+int ontimeDeparture(PtList flights, int number)
+{
+    if (flights == NULL)
+        return;
+    if (listIsEmpty(flights))
+        return;
+    if (number < 0 || number > 30)
+    {
         printf("Number out of bounds! Should be between 0 and 30.");
         return;
     }
     int flightSize;
     listSize(flights, &flightSize);
     int count = 0;
-    for(int i = 0; i < flightSize; i++){
+    for (int i = 0; i < flightSize; i++)
+    {
         ListElem flight;
         listGet(flights, i, &flight);
-        if(timeDiffSpecial(flight.scheduledDeparture, flight.departureTime) <= number){
+        if (timeDiffSpecial(flight.scheduledDeparture, flight.departureTime) <= number)
+        {
             count++;
         }
     }
     return count;
 }
 
-int ontimeArrival(PtList flights, int number){
-    if(flights == NULL) return;
-    if(listIsEmpty(flights)) return;
-    if(number < 0 || number > 30){
+int ontimeArrival(PtList flights, int number)
+{
+    if (flights == NULL)
+        return;
+    if (listIsEmpty(flights))
+        return;
+    if (number < 0 || number > 30)
+    {
         printf("Number out of bounds! Should be between 0 and 30.");
         return;
     }
     int flightSize;
     listSize(flights, &flightSize);
     int count = 0;
-    for(int i = 0; i < flightSize; i++){
+    for (int i = 0; i < flightSize; i++)
+    {
         ListElem flight;
         listGet(flights, i, &flight);
-        if(timeDiffSpecial(flight.scheduledArrival, flight.arrivalTime) <= number){
+        if (timeDiffSpecial(flight.scheduledArrival, flight.arrivalTime) <= number)
+        {
             count++;
         }
     }
     return count;
-}  
-
-
+}
